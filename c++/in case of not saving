@@ -1,0 +1,104 @@
+main.cpp
+#include<iostream>
+#include "Thruster.h"
+
+using namespace std;
+
+int main() {
+    Thruster TH;
+    cout<< "Initial Status: "<<TH.getStatus()<<endl;
+
+    TH.setSpeed(50);
+    cout<<"Speed without Power: "<<TH.getSpeed()<<" "<<TH.getStatus()<<endl;
+
+    TH.setPower(true);
+    TH.setSpeed(75);
+    cout<<"Powered up and running: "<<TH.getStatus()<<endl;
+
+    TH.setSpeed(150);
+    cout<< "Overlimit: "<<TH.getStatus()<<endl;
+
+    return 0;
+}
+
+Thruste.cpp
+//
+// Created by ziad on 20‏/7‏/2026.
+//
+
+#include "Thruster.h"
+
+Thruster::Thruster() {
+    speed = 0;
+    isPowered = false;
+    Status = "OFF";
+}
+
+#include <filesystem>
+
+void  Thruster::setPower(bool power) {
+    isPowered = power;
+    if (!isPowered) {
+        speed = 0;
+    }
+    updateStatus();
+}
+void Thruster::setSpeed(int newSpeed) {
+    if (isPowered) {
+        if (newSpeed > 100) {
+            speed = 100;
+        }
+        else if (newSpeed < 0) {
+            speed = 0;
+        }
+        else {
+            speed = newSpeed;
+        }
+    }
+    updateStatus();
+}
+int Thruster::getSpeed() const {
+    return speed;
+}
+string Thruster::getStatus() const {
+    return Status;
+}
+void Thruster::updateStatus() {
+    if (!isPowered) {
+        Status = "OFF";
+    }
+    else {
+        Status = "ON - Speed: " + to_string(speed) + "%";
+    }
+}
+
+
+
+Thruster.h
+
+//
+// Created by ziad on 20‏/7‏/2026.
+//
+
+#ifndef C_THRUSTER_H
+#define C_THRUSTER_H
+
+#include <string>
+using namespace std;
+class Thruster {
+private:
+    int speed;
+    bool isPowered;
+    string Status;
+    void updateStatus();
+public:
+    Thruster();
+    void setPower(bool power);
+    void setSpeed(int newSpeed);
+    int getSpeed() const;
+    string getStatus() const;
+};
+
+
+#endif //C_THRUSTER_H
+
