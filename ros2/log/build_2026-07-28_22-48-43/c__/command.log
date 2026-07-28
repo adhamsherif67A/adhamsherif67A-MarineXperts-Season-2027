@@ -1,0 +1,2 @@
+Invoking command in '/workspace/build/c__': /usr/bin/cmake /workspace/c++ -DCMAKE_INSTALL_PREFIX=/workspace/install/c__
+Invoked command in '/workspace/build/c__' returned '1': /usr/bin/cmake /workspace/c++ -DCMAKE_INSTALL_PREFIX=/workspace/install/c__
