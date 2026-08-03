@@ -1,0 +1,242 @@
+[0.009s] Invoking command in '/workspace/ros2/build/depth_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2/install/fake_depth_sensor:/workspace/ros2/install/depth_core:/opt/ros/humble /usr/bin/cmake /workspace/ros2/src/depth_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/depth_interfaces
+[0.049s] -- The C compiler identification is GNU 11.4.0
+[0.090s] -- The CXX compiler identification is GNU 11.4.0
+[0.094s] -- Detecting C compiler ABI info
+[0.142s] -- Detecting C compiler ABI info - done
+[0.146s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.146s] -- Detecting C compile features
+[0.147s] -- Detecting C compile features - done
+[0.148s] -- Detecting CXX compiler ABI info
+[0.201s] -- Detecting CXX compiler ABI info - done
+[0.206s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.206s] -- Detecting CXX compile features
+[0.206s] -- Detecting CXX compile features - done
+[0.208s] -- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.307s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.354s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.373s] -- Found rosidl_default_generators: 1.2.1 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.376s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.382s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.409s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.621s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.761s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.922s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.939s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[0.941s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.957s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[0.957s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.957s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.957s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.972s] -- Found PythonExtra: .so  
+[1.040s] -- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.054s] -- Added test 'lint_cmake' to check CMake code style
+[1.055s] -- Added test 'xmllint' to check XML markup files
+[1.057s] -- Configuring done
+[1.075s] -- Generating done
+[1.081s] -- Build files have been written to: /workspace/ros2/build/depth_interfaces
+[1.087s] Invoked command in '/workspace/ros2/build/depth_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2/install/fake_depth_sensor:/workspace/ros2/install/depth_core:/opt/ros/humble /usr/bin/cmake /workspace/ros2/src/depth_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/ros2/install/depth_interfaces
+[1.088s] Invoking command in '/workspace/ros2/build/depth_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2/install/fake_depth_sensor:/workspace/ros2/install/depth_core:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2/build/depth_interfaces -- -j20 -l20
+[1.126s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.134s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.134s] [  7%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[1.140s] [  7%] Built target ament_cmake_python_symlink_depth_interfaces
+[1.269s] running egg_info
+[1.269s] creating depth_interfaces.egg-info
+[1.269s] writing depth_interfaces.egg-info/PKG-INFO
+[1.269s] writing dependency_links to depth_interfaces.egg-info/dependency_links.txt
+[1.269s] writing top-level names to depth_interfaces.egg-info/top_level.txt
+[1.269s] writing manifest file 'depth_interfaces.egg-info/SOURCES.txt'
+[1.270s] reading manifest file 'depth_interfaces.egg-info/SOURCES.txt'
+[1.271s] writing manifest file 'depth_interfaces.egg-info/SOURCES.txt'
+[1.288s] [  7%] Built target ament_cmake_python_build_depth_interfaces_egg
+[1.314s] [  7%] Built target depth_interfaces__rs
+[1.403s] [  7%] Built target depth_interfaces__cpp
+[1.404s] [ 10%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_generator_c.dir/rosidl_generator_c/depth_interfaces/srv/detail/calibrate__functions.c.o[0m
+[1.404s] [ 12%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_generator_c.dir/rosidl_generator_c/depth_interfaces/action/detail/dive__functions.c.o[0m
+[1.408s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.409s] [ 17%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.412s] [ 20%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.491s] [ 22%] [32m[1mLinking C shared library libdepth_interfaces__rosidl_generator_c.so[0m
+[1.515s] [ 22%] Built target depth_interfaces__rosidl_generator_c
+[1.523s] [ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.523s] [ 30%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.523s] [ 30%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.589s] [ 35%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/depth_interfaces/action/dive__type_support.cpp.o[0m
+[1.589s] [ 35%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/depth_interfaces/srv/calibrate__type_support.cpp.o[0m
+[1.618s] [ 40%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/depth_interfaces/srv/detail/calibrate__type_support.cpp.o[0m
+[1.619s] [ 40%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/depth_interfaces/action/detail/dive__type_support.cpp.o[0m
+[1.655s] [ 42%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/depth_interfaces/srv/detail/dds_fastrtps/calibrate__type_support.cpp.o[0m
+[1.657s] [ 45%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/depth_interfaces/action/detail/dds_fastrtps/dive__type_support.cpp.o[0m
+[1.716s] [ 47%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/depth_interfaces/srv/calibrate__type_support.cpp.o[0m
+[1.716s] [ 50%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/depth_interfaces/action/dive__type_support.cpp.o[0m
+[1.755s] [ 52%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/depth_interfaces/srv/detail/calibrate__type_support.c.o[0m
+[1.756s] [ 55%] [32m[1mLinking CXX shared library libdepth_interfaces__rosidl_typesupport_c.so[0m
+[1.756s] [ 57%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/depth_interfaces/action/detail/dive__type_support.c.o[0m
+[1.768s] [ 60%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/depth_interfaces/srv/detail/calibrate__type_support_c.cpp.o[0m
+[1.771s] [ 62%] [32mBuilding CXX object CMakeFiles/depth_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/depth_interfaces/action/detail/dive__type_support_c.cpp.o[0m
+[1.786s] [ 62%] Built target depth_interfaces__rosidl_typesupport_c
+[1.792s] [ 65%] [32m[1mLinking C shared library libdepth_interfaces__rosidl_typesupport_introspection_c.so[0m
+[1.816s] [ 65%] Built target depth_interfaces__rosidl_typesupport_introspection_c
+[1.844s] [ 67%] [32m[1mLinking CXX shared library libdepth_interfaces__rosidl_typesupport_cpp.so[0m
+[1.875s] [ 67%] Built target depth_interfaces__rosidl_typesupport_cpp
+[1.978s] [ 70%] [32m[1mLinking CXX shared library libdepth_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[2.001s] [ 72%] [32m[1mLinking CXX shared library libdepth_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.024s] [ 72%] Built target depth_interfaces__rosidl_typesupport_fastrtps_c
+[2.035s] [ 75%] [32m[1mLinking CXX shared library libdepth_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[2.049s] [ 75%] Built target depth_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.093s] [ 75%] Built target depth_interfaces__rosidl_typesupport_introspection_cpp
+[2.122s] [ 75%] Built target depth_interfaces
+[2.151s] [ 77%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.611s] [ 77%] Built target depth_interfaces__py
+[2.625s] [ 80%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_generator_py.dir/rosidl_generator_py/depth_interfaces/srv/_calibrate_s.c.o[0m
+[2.627s] [ 82%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_generator_py.dir/rosidl_generator_py/depth_interfaces/action/_dive_s.c.o[0m
+[2.713s] [ 85%] [32m[1mLinking C shared library rosidl_generator_py/depth_interfaces/libdepth_interfaces__rosidl_generator_py.so[0m
+[2.741s] [ 85%] Built target depth_interfaces__rosidl_generator_py
+[2.760s] [ 92%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[2.760s] [ 92%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.760s] [ 92%] [32mBuilding C object CMakeFiles/depth_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.832s] [ 95%] [32m[1mLinking C shared library rosidl_generator_py/depth_interfaces/depth_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.840s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/depth_interfaces/depth_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.845s] [100%] [32m[1mLinking C shared library rosidl_generator_py/depth_interfaces/depth_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[2.864s] [100%] Built target depth_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[2.867s] [100%] Built target depth_interfaces__rosidl_typesupport_introspection_c__pyext
+[2.876s] [100%] Built target depth_interfaces__rosidl_typesupport_c__pyext
+[2.885s] Invoked command in '/workspace/ros2/build/depth_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2/install/fake_depth_sensor:/workspace/ros2/install/depth_core:/opt/ros/humble /usr/bin/cmake --build /workspace/ros2/build/depth_interfaces -- -j20 -l20
+[2.895s] Invoking command in '/workspace/ros2/build/depth_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2/install/fake_depth_sensor:/workspace/ros2/install/depth_core:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2/build/depth_interfaces
+[2.904s] -- Install configuration: ""
+[2.904s] -- Execute custom install script
+[2.905s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/ament_index/resource_index/rosidl_interfaces/depth_interfaces
+[2.917s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__functions.h
+[2.925s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__struct.h
+[2.934s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__type_support.h
+[2.946s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/dive.h
+[2.960s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/msg/rosidl_generator_c__visibility_control.h
+[2.967s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/calibrate.h
+[2.975s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__functions.h
+[2.986s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__struct.h
+[2.997s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__type_support.h
+[3.007s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/library_path.sh
+[3.017s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/library_path.dsv
+[3.030s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__rosidl_typesupport_fastrtps_c.h
+[3.036s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.043s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__rosidl_typesupport_fastrtps_c.h
+[3.050s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__rosidl_typesupport_introspection_c.h
+[3.056s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.061s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__rosidl_typesupport_introspection_c.h
+[3.069s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__builder.hpp
+[3.077s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__struct.hpp
+[3.086s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__traits.hpp
+[3.098s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__type_support.hpp
+[3.109s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/dive.hpp
+[3.116s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.123s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/calibrate.hpp
+[3.135s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__builder.hpp
+[3.148s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__struct.hpp
+[3.155s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__traits.hpp
+[3.162s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__type_support.hpp
+[3.173s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__rosidl_typesupport_fastrtps_cpp.hpp
+[3.178s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.186s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__rosidl_typesupport_fastrtps_cpp.hpp
+[3.195s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/action/detail/dive__rosidl_typesupport_introspection_cpp.hpp
+[3.206s] -- Symlinking: /workspace/ros2/install/depth_interfaces/include/depth_interfaces/depth_interfaces/srv/detail/calibrate__rosidl_typesupport_introspection_cpp.hpp
+[3.215s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/pythonpath.sh
+[3.224s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/pythonpath.dsv
+[3.235s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[3.245s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.257s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.263s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[3.270s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/__init__.py
+[3.276s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_c.c
+[3.281s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.288s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[3.295s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/action/__init__.py
+[3.300s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/action/_dive.py
+[3.304s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/action/_dive_s.c
+[3.310s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/depth_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.319s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/depth_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.325s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/depth_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.334s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/libdepth_interfaces__rosidl_generator_py.so
+[3.342s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/srv/__init__.py
+[3.350s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/srv/_calibrate.py
+[3.355s] -- Symlinking: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/srv/_calibrate_s.c
+[3.362s] -- Up-to-date symlink: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/depth_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.362s] -- Up-to-date symlink: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/depth_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.362s] -- Up-to-date symlink: /workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/depth_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.362s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/ament_index/resource_index/rust_packages/depth_interfaces
+[3.369s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/Cargo.toml
+[3.375s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/build.rs
+[3.381s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/src/action.rs
+[3.385s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/src/action/rmw.rs
+[3.392s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/src/lib.rs
+[3.397s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/src/srv.rs
+[3.403s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/rust/src/srv/rmw.rs
+[3.413s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/srv/Calibrate.idl
+[3.422s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/action/Dive.idl
+[3.432s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/srv/Calibrate.srv
+[3.441s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/srv/Calibrate_Request.msg
+[3.450s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/srv/Calibrate_Response.msg
+[3.460s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/action/Dive.action
+[3.469s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/ament_index/resource_index/package_run_dependencies/depth_interfaces
+[3.479s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/ament_index/resource_index/parent_prefix_path/depth_interfaces
+[3.488s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/ament_prefix_path.sh
+[3.497s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/ament_prefix_path.dsv
+[3.508s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/path.sh
+[3.517s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/environment/path.dsv
+[3.528s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/local_setup.bash
+[3.538s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/local_setup.sh
+[3.549s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/local_setup.zsh
+[3.559s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/local_setup.dsv
+[3.568s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/package.dsv
+[3.577s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/ament_index/resource_index/packages/depth_interfaces
+[3.587s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/rosidl_cmake-extras.cmake
+[3.597s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.606s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.616s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[3.625s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[3.636s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.646s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.659s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfacesConfig.cmake
+[3.668s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfacesConfig-version.cmake
+[3.678s] -- Symlinking: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/package.xml
+[3.689s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_generator_c.so
+[3.689s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_generator_c.so" to ""
+[3.690s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_fastrtps_c.so
+[3.690s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[3.690s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_introspection_c.so
+[3.690s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[3.690s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_c.so
+[3.690s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_c.so" to ""
+[3.690s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[3.690s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.690s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_introspection_cpp.so
+[3.690s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[3.690s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_cpp.so
+[3.691s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_typesupport_cpp.so" to ""
+[3.724s] Listing '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces'...
+[3.724s] Compiling '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/__init__.py'...
+[3.724s] Listing '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/action'...
+[3.724s] Compiling '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/action/__init__.py'...
+[3.724s] Compiling '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/action/_dive.py'...
+[3.724s] Listing '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/srv'...
+[3.724s] Compiling '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/srv/__init__.py'...
+[3.725s] Compiling '/workspace/ros2/install/depth_interfaces/local/lib/python3.10/dist-packages/depth_interfaces/srv/_calibrate.py'...
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_generator_py.so
+[3.727s] -- Set runtime path of "/workspace/ros2/install/depth_interfaces/lib/libdepth_interfaces__rosidl_generator_py.so" to ""
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_generator_cExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_generator_cExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_cExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_generator_cppExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_cppExport.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/depth_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[3.727s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_generator_pyExport.cmake
+[3.728s] -- Installing: /workspace/ros2/install/depth_interfaces/share/depth_interfaces/cmake/export_depth_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[3.729s] Invoked command in '/workspace/ros2/build/depth_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/workspace/ros2/install/fake_depth_sensor:/workspace/ros2/install/depth_core:/opt/ros/humble /usr/bin/cmake --install /workspace/ros2/build/depth_interfaces

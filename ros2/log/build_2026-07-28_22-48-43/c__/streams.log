@@ -1,7 +1,0 @@
-[0.011s] Invoking command in '/workspace/build/c__': /usr/bin/cmake /workspace/c++ -DCMAKE_INSTALL_PREFIX=/workspace/install/c__
-[0.017s] [31mCMake Error at CMakeLists.txt:1 (cmake_minimum_required):
-[0.017s]   CMake 4.3 or higher is required.  You are running version 3.22.1
-[0.017s] 
-[0.017s] [0m
-[0.017s] -- Configuring incomplete, errors occurred!
-[0.133s] Invoked command in '/workspace/build/c__' returned '1': /usr/bin/cmake /workspace/c++ -DCMAKE_INSTALL_PREFIX=/workspace/install/c__

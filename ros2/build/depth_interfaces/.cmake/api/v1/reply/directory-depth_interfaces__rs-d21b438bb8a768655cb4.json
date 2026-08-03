@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "depth_interfaces__rs",
+		"source" : "/workspace/ros2/build/depth_interfaces/depth_interfaces__rs"
+	}
+}

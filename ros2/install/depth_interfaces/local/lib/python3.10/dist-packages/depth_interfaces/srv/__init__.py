@@ -1,0 +1,1 @@
+/workspace/ros2/build/depth_interfaces/rosidl_generator_py/depth_interfaces/srv/__init__.py

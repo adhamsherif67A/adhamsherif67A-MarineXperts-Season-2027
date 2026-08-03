@@ -1,0 +1,7 @@
+{
+  "package_name": "depth_interfaces",
+  "non_idl_tuples": [
+    "/workspace/ros2/src/depth_interfaces:srv/Calibrate.srv",
+    "/workspace/ros2/src/depth_interfaces:action/Dive.action"
+  ]
+}
