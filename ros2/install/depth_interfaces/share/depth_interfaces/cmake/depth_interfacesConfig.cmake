@@ -1,1 +1,0 @@
-/workspace/ros2/build/depth_interfaces/ament_cmake_core/depth_interfacesConfig.cmake

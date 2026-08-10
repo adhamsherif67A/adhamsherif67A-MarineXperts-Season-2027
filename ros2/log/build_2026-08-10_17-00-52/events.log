@@ -1,0 +1,117 @@
+[0.000000] (-) TimerEvent: {}
+[0.000082] (-) JobUnselected: {'identifier': 'depth_core'}
+[0.000098] (-) JobUnselected: {'identifier': 'depth_interfaces'}
+[0.000117] (-) JobUnselected: {'identifier': 'fake_depth_sensor'}
+[0.000124] (tf2_drill) JobQueued: {'identifier': 'tf2_drill', 'dependencies': OrderedDict()}
+[0.000469] (tf2_drill) JobStarted: {'identifier': 'tf2_drill'}
+[0.007951] (tf2_drill) JobProgress: {'identifier': 'tf2_drill', 'progress': 'cmake'}
+[0.008413] (tf2_drill) Command: {'cmd': ['/usr/bin/cmake', '/ros2_ws/src/tf2_drill', '-DCMAKE_INSTALL_PREFIX=/ros2_ws/install/tf2_drill'], 'cwd': '/ros2_ws/build/tf2_drill', 'env': OrderedDict([('HOSTNAME', 'ziad-Dell-G15-5530'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/ros2_ws/build/tf2_drill'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.097115] (tf2_drill) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.099957] (-) TimerEvent: {}
+[0.169562] (tf2_drill) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.181416] (tf2_drill) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.200155] (-) TimerEvent: {}
+[0.274250] (tf2_drill) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.283424] (tf2_drill) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.284329] (tf2_drill) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.285285] (tf2_drill) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.291069] (tf2_drill) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.300257] (-) TimerEvent: {}
+[0.393820] (tf2_drill) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.397984] (tf2_drill) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.398173] (tf2_drill) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.398415] (tf2_drill) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.400159] (tf2_drill) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.400302] (-) TimerEvent: {}
+[0.500470] (-) TimerEvent: {}
+[0.514580] (tf2_drill) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[0.583789] (tf2_drill) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.600612] (-) TimerEvent: {}
+[0.607002] (tf2_drill) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.609758] (tf2_drill) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.614547] (tf2_drill) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.621142] (tf2_drill) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.629977] (tf2_drill) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.654365] (tf2_drill) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.655849] (tf2_drill) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.700777] (-) TimerEvent: {}
+[0.732042] (tf2_drill) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.762085] (tf2_drill) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.800936] (-) TimerEvent: {}
+[0.809888] (tf2_drill) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.823132] (tf2_drill) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.901142] (-) TimerEvent: {}
+[0.905483] (tf2_drill) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.905728] (tf2_drill) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.984279] (tf2_drill) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.985619] (tf2_drill) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.001221] (-) TimerEvent: {}
+[1.024236] (tf2_drill) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.032330] (tf2_drill) StdoutLine: {'line': b'-- Found tf2: 0.25.20 (/opt/ros/humble/share/tf2/cmake)\n'}
+[1.040512] (tf2_drill) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.20 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[1.094395] (tf2_drill) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.101389] (-) TimerEvent: {}
+[1.139384] (tf2_drill) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.139535] (tf2_drill) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.139596] (tf2_drill) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.139752] (tf2_drill) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.140144] (tf2_drill) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.140294] (tf2_drill) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.140454] (tf2_drill) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.140917] (tf2_drill) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.146869] (tf2_drill) StdoutLine: {'line': b'-- Generating done\n'}
+[1.148913] (tf2_drill) StdoutLine: {'line': b'-- Build files have been written to: /ros2_ws/build/tf2_drill\n'}
+[1.154746] (tf2_drill) CommandEnded: {'returncode': 0}
+[1.155160] (tf2_drill) JobProgress: {'identifier': 'tf2_drill', 'progress': 'build'}
+[1.155894] (tf2_drill) Command: {'cmd': ['/usr/bin/cmake', '--build', '/ros2_ws/build/tf2_drill', '--', '-j20', '-l20'], 'cwd': '/ros2_ws/build/tf2_drill', 'env': OrderedDict([('HOSTNAME', 'ziad-Dell-G15-5530'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/ros2_ws/build/tf2_drill'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.201516] (-) TimerEvent: {}
+[1.209112] (tf2_drill) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/frame_drill_node.dir/src/frame_drill_node.cpp.o\x1b[0m\n'}
+[1.301632] (-) TimerEvent: {}
+[1.401989] (-) TimerEvent: {}
+[1.502259] (-) TimerEvent: {}
+[1.602566] (-) TimerEvent: {}
+[1.702856] (-) TimerEvent: {}
+[1.803239] (-) TimerEvent: {}
+[1.903525] (-) TimerEvent: {}
+[2.003790] (-) TimerEvent: {}
+[2.104142] (-) TimerEvent: {}
+[2.204452] (-) TimerEvent: {}
+[2.304796] (-) TimerEvent: {}
+[2.405105] (-) TimerEvent: {}
+[2.505372] (-) TimerEvent: {}
+[2.605650] (-) TimerEvent: {}
+[2.705931] (-) TimerEvent: {}
+[2.806194] (-) TimerEvent: {}
+[2.906505] (-) TimerEvent: {}
+[3.006865] (-) TimerEvent: {}
+[3.107152] (-) TimerEvent: {}
+[3.207410] (-) TimerEvent: {}
+[3.307735] (-) TimerEvent: {}
+[3.333645] (tf2_drill) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable frame_drill_node\x1b[0m\n'}
+[3.407939] (-) TimerEvent: {}
+[3.460195] (tf2_drill) StdoutLine: {'line': b'[100%] Built target frame_drill_node\n'}
+[3.468983] (tf2_drill) CommandEnded: {'returncode': 0}
+[3.469920] (tf2_drill) JobProgress: {'identifier': 'tf2_drill', 'progress': 'install'}
+[3.476639] (tf2_drill) Command: {'cmd': ['/usr/bin/cmake', '--install', '/ros2_ws/build/tf2_drill'], 'cwd': '/ros2_ws/build/tf2_drill', 'env': OrderedDict([('HOSTNAME', 'ziad-Dell-G15-5530'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/ros'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/ros2_ws/build/tf2_drill'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[3.486824] (tf2_drill) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.487123] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/lib/tf2_drill/frame_drill_node\n'}
+[3.488774] (tf2_drill) StdoutLine: {'line': b'-- Set runtime path of "/ros2_ws/install/tf2_drill/lib/tf2_drill/frame_drill_node" to ""\n'}
+[3.488944] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/ament_index/resource_index/package_run_dependencies/tf2_drill\n'}
+[3.489125] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/ament_index/resource_index/parent_prefix_path/tf2_drill\n'}
+[3.489298] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/environment/ament_prefix_path.sh\n'}
+[3.489401] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/environment/ament_prefix_path.dsv\n'}
+[3.489551] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/environment/path.sh\n'}
+[3.489795] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/environment/path.dsv\n'}
+[3.489930] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/local_setup.bash\n'}
+[3.490053] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/local_setup.sh\n'}
+[3.490195] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/local_setup.zsh\n'}
+[3.490290] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/local_setup.dsv\n'}
+[3.490382] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/package.dsv\n'}
+[3.490474] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/ament_index/resource_index/packages/tf2_drill\n'}
+[3.490566] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/cmake/tf2_drillConfig.cmake\n'}
+[3.490661] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/cmake/tf2_drillConfig-version.cmake\n'}
+[3.490761] (tf2_drill) StdoutLine: {'line': b'-- Installing: /ros2_ws/install/tf2_drill/share/tf2_drill/package.xml\n'}
+[3.492043] (tf2_drill) CommandEnded: {'returncode': 0}
+[3.508151] (-) TimerEvent: {}
+[3.526719] (tf2_drill) JobEnded: {'identifier': 'tf2_drill', 'rc': 0}
+[3.527286] (-) EventReactorShutdown: {}

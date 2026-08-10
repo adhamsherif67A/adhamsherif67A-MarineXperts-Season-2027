@@ -1,4 +1,0 @@
-[console_scripts]
-publisher_node = fake_depth_sensor.depth_publisher:main
-subscriber_node = fake_depth_sensor.depth_subscriber:main
-

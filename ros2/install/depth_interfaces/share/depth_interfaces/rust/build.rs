@@ -1,1 +1,0 @@
-/workspace/ros2/build/depth_interfaces/rosidl_generator_rs/depth_interfaces/rust/build.rs

@@ -1,4 +1,0 @@
-float32 zero_offset
----
-bool success
-string message

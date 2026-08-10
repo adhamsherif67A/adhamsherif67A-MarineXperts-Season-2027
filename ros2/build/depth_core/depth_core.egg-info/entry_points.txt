@@ -1,3 +1,0 @@
-[console_scripts]
-fake_sensor_node = depth_core.fake_sensor_node:main
-

@@ -1,1 +1,0 @@
-/workspace/ros2/build/depth_interfaces/rosidl_generator_py/depth_interfaces/_depth_interfaces_s.ep.rosidl_typesupport_introspection_c.c

@@ -1,1 +1,0 @@
-/workspace/ros2/build/depth_interfaces/rosidl_generator_c/depth_interfaces/srv/detail/calibrate__type_support.h
