@@ -1,0 +1,6 @@
+Invoking command in '/home/boda/mako_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/boda/mako_ws/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/boda/mako_ws/install/robot_description
+Invoked command in '/home/boda/mako_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/boda/mako_ws/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/boda/mako_ws/install/robot_description
+Invoking command in '/home/boda/mako_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/boda/mako_ws/build/robot_description -- -j16 -l16
+Invoked command in '/home/boda/mako_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/boda/mako_ws/build/robot_description -- -j16 -l16
+Invoking command in '/home/boda/mako_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/boda/mako_ws/build/robot_description
+Invoked command in '/home/boda/mako_ws/build/robot_description' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/boda/mako_ws/build/robot_description

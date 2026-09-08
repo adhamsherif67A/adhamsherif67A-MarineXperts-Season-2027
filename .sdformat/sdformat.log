@@ -1,0 +1,4 @@
+Dbg [parser.cc:1086] Converting a deprecated source[/home/boda/mako_ws/src/robot_description/worlds/pool.sdf].
+Dbg [Converter.cc:116] Version[1.10] to Version[1.11]
+  Please use the gz sdf tool to update your SDF files.
+    $ gz sdf -c [sdf_file]

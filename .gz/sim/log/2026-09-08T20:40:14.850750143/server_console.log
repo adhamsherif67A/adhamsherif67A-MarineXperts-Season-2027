@@ -1,0 +1,81 @@
+(2026-09-08T20:40:14.851209502) (2026-09-08T20:40:14.851222738) [Msg] Gazebo Sim Server v8.14.0
+(2026-09-08T20:40:14.885735602) (2026-09-08T20:40:14.885749288) [Msg] Loading SDF world file[/home/boda/mako_ws/src/robot_description/worlds/pool.sdf].
+(2026-09-08T20:40:15.119099467) (2026-09-08T20:40:15.119110448) [Msg] Serving entity system service on [/entity/system/add]
+(2026-09-08T20:40:15.307380057) (2026-09-08T20:40:15.307395306) [Dbg] [Physics.cc:945] Loaded [gz::physics::dartsim::Plugin] from library [/usr/lib/x86_64-linux-gnu/gz-physics-7/engine-plugins/libgz-physics-dartsim-plugin.so]
+(2026-09-08T20:40:15.307525756) (2026-09-08T20:40:15.307534743) [Dbg] [SystemManager.cc:80] Loaded system [gz::sim::systems::Physics] for entity [1]
+(2026-09-08T20:40:15.330919587) (2026-09-08T20:40:15.330937330) [Dbg] [Sensors.cc:697] Configuring Sensors system
+(2026-09-08T20:40:15.331151190) (2026-09-08T20:40:15.331166058) [Dbg] [Sensors.cc:557] SensorsPrivate::Run
+(2026-09-08T20:40:15.331351383) (2026-09-08T20:40:15.331364017) [Dbg] [SystemManager.cc:80] Loaded system [(2026-09-08T20:40:15.331397521) (2026-09-08T20:40:15.331414694) ] for entity [1]
+[Dbg] [Sensors.cc:532] SensorsPrivate::RenderThread started
+(2026-09-08T20:40:15.331502542) (2026-09-08T20:40:15.331513203) [Dbg] [Sensors.cc:337] Waiting for init
+(2026-09-08T20:40:15.334056141) (2026-09-08T20:40:15.334070238) [Dbg] [SystemManager.cc:80] Loaded system [gz::sim::systems::Imu] for entity [1]
+(2026-09-08T20:40:15.337813934) (2026-09-08T20:40:15.337828351) [Msg] Create service on [/world/CompetitionWorld2025/create_multiple] (async)
+(2026-09-08T20:40:15.337889308) (2026-09-08T20:40:15.337899628) [Msg] Create service on [/world/CompetitionWorld2025/create_multiple/blocking] (blocking)
+(2026-09-08T20:40:15.338075024) (2026-09-08T20:40:15.338088139) [Msg] Remove service on [/world/CompetitionWorld2025/remove] (async)
+(2026-09-08T20:40:15.338145058) (2026-09-08T20:40:15.338155307) [Msg] Remove service on [/world/CompetitionWorld2025/remove/blocking] (blocking)
+(2026-09-08T20:40:15.338302309) (2026-09-08T20:40:15.338313520) [Msg] Pose service on [/world/CompetitionWorld2025/set_pose] (async)
+(2026-09-08T20:40:15.338356372) (2026-09-08T20:40:15.338366261) [Msg] Pose service on [/world/CompetitionWorld2025/set_pose/blocking] (blocking)
+(2026-09-08T20:40:15.338502111) (2026-09-08T20:40:15.338512972) [Msg] Pose service on [/world/CompetitionWorld2025/set_pose_vector] (async)
+(2026-09-08T20:40:15.338555734) (2026-09-08T20:40:15.338565833) [Msg] Pose service on [/world/CompetitionWorld2025/set_pose_vector/blocking] (blocking)
+(2026-09-08T20:40:15.338760215) (2026-09-08T20:40:15.338771437) [Msg] Light configuration service on [/world/CompetitionWorld2025/light_config] (async)
+(2026-09-08T20:40:15.338815040) (2026-09-08T20:40:15.338824879) [Msg] Light configuration service on [/world/CompetitionWorld2025/light_config/blocking] (blocking)
+(2026-09-08T20:40:15.339088153) (2026-09-08T20:40:15.339099795) [Msg] Physics service on [/world/CompetitionWorld2025/set_physics] (async)
+(2026-09-08T20:40:15.339160572) (2026-09-08T20:40:15.339174137) [Msg] Physics service on [/world/CompetitionWorld2025/set_physics/blocking] (blocking)
+(2026-09-08T20:40:15.339393578) (2026-09-08T20:40:15.339405390) [Msg] SphericalCoordinates service on [/world/CompetitionWorld2025/set_spherical_coordinates] (async)
+(2026-09-08T20:40:15.339463662) (2026-09-08T20:40:15.339476065) [Msg] SphericalCoordinates service on [/world/CompetitionWorld2025/set_spherical_coordinates/blocking] (blocking)
+(2026-09-08T20:40:15.339599983) (2026-09-08T20:40:15.339614430) [Msg] Enable collision service on [/world/CompetitionWorld2025/enable_collision] (async)
+(2026-09-08T20:40:15.339668504) (2026-09-08T20:40:15.339682641) [Msg] Enable collision service on [/world/CompetitionWorld2025/enable_collision/blocking] (blocking)
+(2026-09-08T20:40:15.339813872) (2026-09-08T20:40:15.339825645) [Msg] Disable collision service on [/world/CompetitionWorld2025/disable_collision] (async)
+(2026-09-08T20:40:15.339878185) (2026-09-08T20:40:15.339888264) [Msg] Disable collision service on [/world/CompetitionWorld2025/disable_collision/blocking] (blocking)
+(2026-09-08T20:40:15.340183079) (2026-09-08T20:40:15.340193619) [Msg] Material service on [/world/CompetitionWorld2025/visual_config] (async)
+(2026-09-08T20:40:15.340224207) (2026-09-08T20:40:15.340231261) [Msg] Material service on [/world/CompetitionWorld2025/visual_config/blocking] (blocking)
+(2026-09-08T20:40:15.340382971) (2026-09-08T20:40:15.340389825) [Msg] Material service on [/world/CompetitionWorld2025/wheel_slip] (async)
+(2026-09-08T20:40:15.340419391) (2026-09-08T20:40:15.340424982) [Msg] Material service on [/world/CompetitionWorld2025/wheel_slip/blocking] (blocking)
+(2026-09-08T20:40:15.340463996) (2026-09-08T20:40:15.340469697) [Dbg] [SystemManager.cc:80] Loaded system [gz::sim::systems::UserCommands] for entity [1]
+(2026-09-08T20:40:15.343354730) (2026-09-08T20:40:15.343369158) [Dbg] [SystemManager.cc:80] Loaded system [gz::sim::systems::SceneBroadcaster] for entity [1]
+(2026-09-08T20:40:15.344915588) (2026-09-08T20:40:15.344927431) [Dbg] [Buoyancy.cc:494] Default density set to 998
+(2026-09-08T20:40:15.345058041) (2026-09-08T20:40:15.345068962) [Dbg] [Buoyancy.cc:512] Added layer at 0, 1.225
+(2026-09-08T20:40:15.345134497) (2026-09-08T20:40:15.345142983) [Dbg] [SystemManager.cc:80] Loaded system [gz::sim::systems::Buoyancy] for entity [1]
+(2026-09-08T20:40:15.346592217) (2026-09-08T20:40:15.346604611) [Msg] Loaded level [default]
+(2026-09-08T20:40:15.347611288) (2026-09-08T20:40:15.347620886) [Msg] Serving world controls on [/world/CompetitionWorld2025/control], [/world/CompetitionWorld2025/control/state] and [/world/CompetitionWorld2025/playback/control]
+(2026-09-08T20:40:15.347756616) (2026-09-08T20:40:15.347763459) [Msg] Serving GUI information on [/world/CompetitionWorld2025/gui/info]
+(2026-09-08T20:40:15.347794709) (2026-09-08T20:40:15.347800380) [Msg] World [CompetitionWorld2025] initialized with [1ms] physics profile.
+(2026-09-08T20:40:15.347975074) (2026-09-08T20:40:15.347984713) [Msg] Serving world SDF generation service on [/world/CompetitionWorld2025/generate_world_sdf]
+(2026-09-08T20:40:15.348113579) (2026-09-08T20:40:15.348138828) [Msg] Serving world names on [/gazebo/worlds]
+(2026-09-08T20:40:15.348208060) (2026-09-08T20:40:15.348214322) [Msg] Resource path add service on [/gazebo/resource_paths/add].
+(2026-09-08T20:40:15.348270249) (2026-09-08T20:40:15.348277533) [Msg] Resource path get service on [/gazebo/resource_paths/get].
+(2026-09-08T20:40:15.348361274) (2026-09-08T20:40:15.348369580) [Msg] Resource path resolve service on [/gazebo/resource_paths/resolve].
+(2026-09-08T20:40:15.348498617) (2026-09-08T20:40:15.348506081) [Msg] Resource paths published on [/gazebo/resource_paths].
+(2026-09-08T20:40:15.348656138) (2026-09-08T20:40:15.348664524) [Msg] Server control service on [/server_control].
+(2026-09-08T20:40:16.858752069) (2026-09-08T20:40:16.858762239) [Msg] Found no publishers on /stats, adding root stats topic
+(2026-09-08T20:40:16.858949668) (2026-09-08T20:40:16.858956431) [Msg] Found no publishers on /clock, adding root clock topic
+(2026-09-08T20:40:16.859066311) (2026-09-08T20:40:16.859071731) [Dbg] [SimulationRunner.cc:627] Creating PostUpdate worker threads: 5
+(2026-09-08T20:40:16.859097120) (2026-09-08T20:40:16.859101689) [Dbg] [SimulationRunner.cc:638] Creating postupdate worker thread (0)
+(2026-09-08T20:40:16.859225696) (2026-09-08T20:40:16.859231607) [Dbg] [SimulationRunner.cc:638] Creating postupdate worker thread (1)
+(2026-09-08T20:40:16.859300810) (2026-09-08T20:40:16.859305980) [Dbg] [SimulationRunner.cc:638] Creating postupdate worker thread (2)
+(2026-09-08T20:40:16.859387436) (2026-09-08T20:40:16.859392355) [Dbg] [SimulationRunner.cc:638] Creating postupdate worker thread (3)
+(2026-09-08T20:40:16.865189602) (2026-09-08T20:40:16.865199641) [Dbg] [SimulationFeatures.cc:90] Simulation timestep set to: 0.003
+(2026-09-08T20:40:16.866445316) (2026-09-08T20:40:16.866454023) [Msg] Serving scene information on [/world/CompetitionWorld2025/scene/info]
+(2026-09-08T20:40:16.866539637) (2026-09-08T20:40:16.866557751) [Msg] Serving graph information on [/world/CompetitionWorld2025/scene/graph]
+(2026-09-08T20:40:16.866774095) (2026-09-08T20:40:16.866779826) [Msg] Serving full state on [/world/CompetitionWorld2025/state]
+(2026-09-08T20:40:16.866887623) (2026-09-08T20:40:16.866894636) [Msg] Serving full state (async) on [/world/CompetitionWorld2025/state_async]
+(2026-09-08T20:40:16.866966303) (2026-09-08T20:40:16.866971533) [Msg] Publishing scene information on [/world/CompetitionWorld2025/scene/info]
+(2026-09-08T20:40:16.867063840) (2026-09-08T20:40:16.867069311) [Msg] Publishing entity deletions on [/world/CompetitionWorld2025/scene/deletion]
+(2026-09-08T20:40:16.867111642) (2026-09-08T20:40:16.867116531) [Msg] Publishing state changes on [/world/CompetitionWorld2025/state]
+(2026-09-08T20:40:16.867193278) (2026-09-08T20:40:16.867198488) [Msg] Publishing pose messages on [/world/CompetitionWorld2025/pose/info]
+(2026-09-08T20:40:16.867249606) (2026-09-08T20:40:16.867255006) [Msg] Publishing dynamic pose messages on [/world/CompetitionWorld2025/dynamic_pose/info]
+(2026-09-08T20:40:17.586775940) (2026-09-08T20:40:17.586787913) [Dbg] [SignalHandler.cc:142] Received signal[15].
+(2026-09-08T20:40:17.586829913) (2026-09-08T20:40:17.586834973) [Dbg] [ServerPrivate.cc:122] Server received signal[15]
+(2026-09-08T20:40:17.586857075) (2026-09-08T20:40:17.586861604) [Dbg] [Sensors.cc:565] SensorsPrivate::Stop
+(2026-09-08T20:40:17.586914505) (2026-09-08T20:40:17.586921809) [Dbg] [Sensors.cc:391] Rendering Thread initialized
+(2026-09-08T20:40:17.586972616) (2026-09-08T20:40:17.586977556) [Dbg] [Sensors.cc:551] SensorsPrivate::RenderThread stopped
+(2026-09-08T20:40:17.587066466) (2026-09-08T20:40:17.587073740) [Dbg] [SignalHandler.cc:142] Received signal[15].
+(2026-09-08T20:40:17.587109298) (2026-09-08T20:40:17.587113977) [Dbg] [ServerPrivate.cc:122] Server received signal[15]
+(2026-09-08T20:40:17.587936582) (2026-09-08T20:40:17.587944567) [Dbg] [gz.cc:434] Shutting down gz-sim-server
+(((((((2026-09-08T20:40:17.595672490) (2026-09-08T20:40:17.595687289) 2026-09-08T20:40:17.5956971882026-09-08T20:40:17.595668062) (2026-09-08T20:40:17.595713739) ) ) [Dbg] [SimulationRunner.cc:654] (2026-09-08T20:40:17.5957375152026-09-08T20:40:17.595737515Exiting postupdate worker thread (02026-09-08T20:40:17.595748696) ((2026-09-08T20:40:17.595765739) ) 
+
+[Dbg] [SimulationRunner.cc:654] [Dbg] [SimulationRunner.cc:654] Exiting postupdate worker thread (3Exiting postupdate worker thread (1)
+)
+[Dbg] [SimulationRunner.cc:654] [Dbg] [SimulationRunner.cc:654] Exiting postupdate worker thread (
+2)
+(2026-09-08T20:40:17.613561184) (2026-09-08T20:40:17.613572246) [Dbg] [Sensors.cc:565] SensorsPrivate::Stop
