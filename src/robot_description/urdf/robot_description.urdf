@@ -55,7 +55,10 @@
     </inertial>
   </link>
 
-  <!-- Attached to base_link so it stays perfectly level -->
+  <!--
+    Sensor frame is coincident with base_link (ROS FLU).  The ArduPilot
+    plugin converts this to FRD/NED, so do not add a second IMU rotation here.
+  -->
   <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>

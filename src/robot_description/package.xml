@@ -18,6 +18,11 @@
   <depend>rviz2</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>gazebo_ros</depend>
+  <depend>xacro</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
+  <depend>rclpy</depend>
+  <depend>nav_msgs</depend>
   <export>
     <build_type>ament_cmake</build_type>
   </export>

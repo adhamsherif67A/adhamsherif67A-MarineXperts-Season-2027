@@ -15,4 +15,9 @@ install(
     DESTINATION share/${PROJECT_NAME}
 )
 
+install(
+    PROGRAMS scripts/gz_odom_to_mavros.py
+    DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()

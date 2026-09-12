@@ -80,6 +80,9 @@ def generate_launch_description():
             arguments=[
                 # Bridge Mako's dynamic TF from the Odometry Publisher
                 '/model/mako/tf@tf2_msgs/msg/TFMessage[gz.msgs.Pose_V',
+                # Keep an Odometry message available for localization / Nav2
+                # integration.  Its child frame is base_link.
+                '/model/mako/odometry@nav_msgs/msg/Odometry[gz.msgs.Odometry',
                 
                 # Bridge Mako's joint states using your exact SDF world name
                 '/world/CompetitionWorld2025/model/mako/joint_state@sensor_msgs/msg/JointState[gz.msgs.Model',
@@ -103,6 +106,7 @@ def generate_launch_description():
             remappings=[
                 # Remap to standard ROS 2 topics for RViz
                 ('/model/mako/tf', '/tf'),
+                ('/model/mako/odometry', '/odometry/gz'),
                 ('/world/CompetitionWorld2025/model/mako/joint_state', '/joint_states'),
                 
                 # Simplify camera topics for easier access in RViz
@@ -112,6 +116,17 @@ def generate_launch_description():
                 ('/robot_description/zed2i/camera_info', '/zed2i/camera_info'),
             ],
             output='screen'
+        ),
+
+        # Feed Gazebo ground-truth odometry to ArduPilot through MAVROS.  EKF3
+        # uses this ExternalNav stream instead of the invalid air-pressure
+        # value produced by the non-hydrostatic Gazebo pressure sensor.
+        Node(
+            package='robot_description',
+            executable='gz_odom_to_mavros.py',
+            name='gz_odom_to_mavros',
+            parameters=[{'use_sim_time': True}],
+            output='screen',
         ),
 
         # ==========================================================

@@ -8,57 +8,70 @@
       <fdm_port_in>9002</fdm_port_in>
       <fdm_port_out>9003</fdm_port_out>
       
+      <!--
+        base_link follows ROS REP-103 (X forward, Y left, Z up).  ArduPilot
+        consumes body FRD and world NED.  A 180 degree roll is the required
+        FLU -> FRD conversion; a pitch rotation reverses the vehicle's forward
+        axis and was the cause of reversed manual motion.
+      -->
       <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
-      <gazeboXYZToNED>0 0 0 3.141593 0 -1.570796</gazeboXYZToNED>
+
+      <!-- Gazebo world is ENU; ArduPilot world is NED. -->
+      <gazeboXYZToNED>0 0 0 3.141593 0 1.570796</gazeboXYZToNED>
       
       <imuName>imu_sensor</imuName>
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
 
-      <!-- ArduSub Motor 1 (Front Right) -> Routes to t1_joint -->
+      <!--
+        ArduSub Motor 1 is front-right.  The CAD / URDF link names are
+        mirrored relative to the ArduSub mixer, so pairwise routing is used:
+        it keeps surge correct while restoring sway and yaw signs.
+      -->
       <control channel="0">
-        <type>COMMAND</type>
-        <jointName>t1_joint</jointName>
-        <offset>-0.5</offset>
-        <multiplier>103.0</multiplier>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
-        <cmd_topic>/model/robot_description/joint/t1_joint/cmd_thrust</cmd_topic>
-      </control>
-
-      <!-- ArduSub Motor 2 (Front Left) -> Routes to t2_joint -->
-      <control channel="1">
         <type>COMMAND</type>
         <jointName>t2_joint</jointName>
         <offset>-0.5</offset>
-        <multiplier>103.0</multiplier>
+        <!-- Positive ArduSub forward command must produce Gazebo forward thrust. -->
+        <multiplier>-103.0</multiplier>
         <servo_min>1100</servo_min>
         <servo_max>1900</servo_max>
         <cmd_topic>/model/robot_description/joint/t2_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 3 (Back Right) -> Routes to t3_joint -->
-      <control channel="2">
+      <!-- ArduSub Motor 2 is front-left. -->
+      <control channel="1">
         <type>COMMAND</type>
-        <jointName>t3_joint</jointName>
+        <jointName>t1_joint</jointName>
         <offset>-0.5</offset>
-        <multiplier>103.0</multiplier>
+        <multiplier>-103.0</multiplier>
         <servo_min>1100</servo_min>
         <servo_max>1900</servo_max>
-        <cmd_topic>/model/robot_description/joint/t3_joint/cmd_thrust</cmd_topic>
+        <cmd_topic>/model/robot_description/joint/t1_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 4 (Back Left) -> Routes to t4_joint -->
-      <control channel="3">
+      <!-- ArduSub Motor 3 is rear-right. -->
+      <control channel="2">
         <type>COMMAND</type>
         <jointName>t4_joint</jointName>
         <offset>-0.5</offset>
-        <multiplier>103.0</multiplier>
+        <multiplier>-103.0</multiplier>
         <servo_min>1100</servo_min>
         <servo_max>1900</servo_max>
         <cmd_topic>/model/robot_description/joint/t4_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 5 (Up Right) -> Routes to t5_joint -->
+      <!-- ArduSub Motor 4 is rear-left. -->
+      <control channel="3">
+        <type>COMMAND</type>
+        <jointName>t3_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>-103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t3_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- ArduSub Motor 5: vertical left.  Positive gain corrects the observed inverted heave response. -->
       <control channel="4">
         <type>COMMAND</type>
         <jointName>t5_joint</jointName>
@@ -69,7 +82,7 @@
         <cmd_topic>/model/robot_description/joint/t5_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 6 (Up Left) -> Routes to t6_joint -->
+      <!-- ArduSub Motor 6: vertical right.  Positive gain corrects the observed inverted heave response. -->
       <control channel="5">
         <type>COMMAND</type>
         <jointName>t6_joint</jointName>
