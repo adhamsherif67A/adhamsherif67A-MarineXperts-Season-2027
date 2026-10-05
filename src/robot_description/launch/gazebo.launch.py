@@ -4,7 +4,12 @@ from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, SetEnvironmentVariable
+from launch.actions import (
+    ExecuteProcess,
+    IncludeLaunchDescription,
+    SetEnvironmentVariable,
+    TimerAction,
+)
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
@@ -118,7 +123,8 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # Feed Gazebo ground-truth odometry to ArduPilot through MAVROS.  EKF3
+        # Feed Gazebo ground-truth odometry to ArduPilot through MAVROS.  The
+        # MAVROS ROS-to-FCU endpoint is /mavros/odometry/out; EKF3
         # uses this ExternalNav stream instead of the invalid air-pressure
         # value produced by the non-hydrostatic Gazebo pressure sensor.
         Node(
@@ -127,6 +133,24 @@ def generate_launch_description():
             name='gz_odom_to_mavros',
             parameters=[{'use_sim_time': True}],
             output='screen',
+        ),
+
+        # MAVROS is started separately because its FCU URL is deployment
+        # specific.  Once it exposes the parameter service, configure EKF3 to
+        # use the Gazebo odometry ExternalNav stream and disable unsuitable
+        # simulated-sensor behaviour.  The helper exits harmlessly if MAVROS
+        # has not appeared within the timeout.
+        TimerAction(
+            period=5.0,
+            actions=[
+                ExecuteProcess(
+                    cmd=[
+                        'ros2', 'run', package_name, 'fix_ardusub_params.py',
+                        '--non-interactive', '--wait-for-mavros', '90',
+                    ],
+                    output='screen',
+                ),
+            ],
         ),
 
         # ==========================================================

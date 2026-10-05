@@ -6,7 +6,7 @@ find_package(ament_cmake REQUIRED)
 
 # Install directories into the share path
 install(
-    DIRECTORY config launch meshes textures urdf worlds 
+    DIRECTORY config launch meshes urdf worlds
     DESTINATION share/${PROJECT_NAME}
 )
 
@@ -16,7 +16,10 @@ install(
 )
 
 install(
-    PROGRAMS scripts/gz_odom_to_mavros.py
+    PROGRAMS
+        scripts/gz_odom_to_mavros.py
+        scripts/fix_ardusub_params.py
+        scripts/local_waypoint_mission.py
     DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -10,8 +10,8 @@
         <!-- ArduPilot EKF Origin (Required for SITL pre-arm checks) -->
         <spherical_coordinates>
             <surface_model>EARTH_WGS84</surface_model>
-            <latitude_deg>31.2001</latitude_deg>
-            <longitude_deg>29.9187</longitude_deg>
+            <latitude_deg>31.312000</latitude_deg>
+            <longitude_deg>30.067222</longitude_deg>
             <elevation>0.0</elevation>
             <heading_deg>0</heading_deg>
         </spherical_coordinates>

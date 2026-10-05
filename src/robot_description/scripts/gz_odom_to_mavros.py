@@ -23,7 +23,10 @@ class GazeboOdomToMavros(Node):
     def __init__(self):
         super().__init__('gz_odom_to_mavros')
         self.declare_parameter('source_topic', '/odometry/gz')
-        self.declare_parameter('target_topic', '/mavros/odometry/in')
+        # MAVROS ROS 2 uses ``~/out`` for odometry supplied by ROS and sent to
+        # the FCU.  ``~/in`` is the opposite direction (FCU -> ROS) and has
+        # no subscriber for an ExternalNav source.
+        self.declare_parameter('target_topic', '/mavros/odometry/out')
 
         source = self.get_parameter('source_topic').value
         target = self.get_parameter('target_topic').value

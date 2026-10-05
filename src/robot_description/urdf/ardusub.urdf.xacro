@@ -23,45 +23,26 @@
       <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
 
       <!--
-        ArduSub Motor 1 is front-right.  The CAD / URDF link names are
-        mirrored relative to the ArduSub mixer, so pairwise routing is used:
-        it keeps surge correct while restoring sway and yaw signs.
+        ArduSub VECTORED mixer (FRAME_CONFIG=1), in physical vehicle order.
+        The force axes calculated from the URDF joint poses are:
+          M1=t4 front-right, M2=t3 front-left,
+          M3=t2 rear-right,  M4=t1 rear-left.
+        Negative multipliers map ArduSub's surge / sway / yaw allocation to
+        the physical forward direction of the visual model.
       -->
       <control channel="0">
         <type>COMMAND</type>
-        <jointName>t2_joint</jointName>
-        <offset>-0.5</offset>
-        <!-- Positive ArduSub forward command must produce Gazebo forward thrust. -->
-        <multiplier>-103.0</multiplier>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
-        <cmd_topic>/model/robot_description/joint/t2_joint/cmd_thrust</cmd_topic>
-      </control>
-
-      <!-- ArduSub Motor 2 is front-left. -->
-      <control channel="1">
-        <type>COMMAND</type>
-        <jointName>t1_joint</jointName>
-        <offset>-0.5</offset>
-        <multiplier>-103.0</multiplier>
-        <servo_min>1100</servo_min>
-        <servo_max>1900</servo_max>
-        <cmd_topic>/model/robot_description/joint/t1_joint/cmd_thrust</cmd_topic>
-      </control>
-
-      <!-- ArduSub Motor 3 is rear-right. -->
-      <control channel="2">
-        <type>COMMAND</type>
         <jointName>t4_joint</jointName>
         <offset>-0.5</offset>
+        <!-- Positive ArduSub forward command must produce Gazebo forward thrust. -->
         <multiplier>-103.0</multiplier>
         <servo_min>1100</servo_min>
         <servo_max>1900</servo_max>
         <cmd_topic>/model/robot_description/joint/t4_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 4 is rear-left. -->
-      <control channel="3">
+      <!-- ArduSub Motor 2 is front-left. -->
+      <control channel="1">
         <type>COMMAND</type>
         <jointName>t3_joint</jointName>
         <offset>-0.5</offset>
@@ -71,23 +52,47 @@
         <cmd_topic>/model/robot_description/joint/t3_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 5: vertical left.  Positive gain corrects the observed inverted heave response. -->
+      <!-- ArduSub Motor 3 is rear-right. -->
+      <control channel="2">
+        <type>COMMAND</type>
+        <jointName>t2_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>-103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t2_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- ArduSub Motor 4 is rear-left. -->
+      <control channel="3">
+        <type>COMMAND</type>
+        <jointName>t1_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>-103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t1_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- ArduSub Motor 5: vertical left.  Negative gain maps ArduSub heave
+           commands to the physical thrust direction of this Gazebo joint. -->
       <control channel="4">
         <type>COMMAND</type>
         <jointName>t5_joint</jointName>
         <offset>-0.5</offset>
-        <multiplier>103.0</multiplier>
+        <multiplier>-103.0</multiplier>
         <servo_min>1100</servo_min>
         <servo_max>1900</servo_max>
         <cmd_topic>/model/robot_description/joint/t5_joint/cmd_thrust</cmd_topic>
       </control>
 
-      <!-- ArduSub Motor 6: vertical right.  Positive gain corrects the observed inverted heave response. -->
+      <!-- ArduSub Motor 6: vertical right.  Keep the same heave polarity as
+           Motor 5 so collective vertical commands do not invert. -->
       <control channel="5">
         <type>COMMAND</type>
         <jointName>t6_joint</jointName>
         <offset>-0.5</offset>
-        <multiplier>103.0</multiplier>
+        <multiplier>-103.0</multiplier>
         <servo_min>1100</servo_min>
         <servo_max>1900</servo_max>
         <cmd_topic>/model/robot_description/joint/t6_joint/cmd_thrust</cmd_topic>
