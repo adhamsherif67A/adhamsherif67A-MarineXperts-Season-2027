@@ -197,6 +197,43 @@ robot_description_uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_description_uninstall.dir/build.make CMakeFiles/robot_description_uninstall.dir/build
 .PHONY : robot_description_uninstall/fast
 
+#=============================================================================
+# Target rules for targets named mako-pool-waves
+
+# Build rule for target.
+mako-pool-waves: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mako-pool-waves
+.PHONY : mako-pool-waves
+
+# fast build rule for target.
+mako-pool-waves/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/build
+.PHONY : mako-pool-waves/fast
+
+src/PoolWaves.o: src/PoolWaves.cc.o
+.PHONY : src/PoolWaves.o
+
+# target to build an object file
+src/PoolWaves.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/src/PoolWaves.cc.o
+.PHONY : src/PoolWaves.cc.o
+
+src/PoolWaves.i: src/PoolWaves.cc.i
+.PHONY : src/PoolWaves.i
+
+# target to preprocess a source file
+src/PoolWaves.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/src/PoolWaves.cc.i
+.PHONY : src/PoolWaves.cc.i
+
+src/PoolWaves.s: src/PoolWaves.cc.s
+.PHONY : src/PoolWaves.s
+
+# target to generate assembly for a file
+src/PoolWaves.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/src/PoolWaves.cc.s
+.PHONY : src/PoolWaves.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -212,6 +249,10 @@ help:
 	@echo "... test"
 	@echo "... robot_description_uninstall"
 	@echo "... uninstall"
+	@echo "... mako-pool-waves"
+	@echo "... src/PoolWaves.o"
+	@echo "... src/PoolWaves.i"
+	@echo "... src/PoolWaves.s"
 .PHONY : help
 
 

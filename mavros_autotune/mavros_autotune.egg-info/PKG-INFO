@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: mavros-autotune
+Version: 0.0.0
+Summary: MAVROS Autotune Node for Position and Velocity Tuning
+Home-page: UNKNOWN
+Maintainer: boda
+Maintainer-email: a.ibrahim03633@student.aast.edu
+License: Apache-2.0
+Platform: UNKNOWN
+Provides-Extra: test
+
+UNKNOWN
+

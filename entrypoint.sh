@@ -1,18 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
-
-# Source the main ROS 2 Humble installation
 source /opt/ros/humble/setup.bash
-
-# Source the custom ros_gz bridge (built for Harmonic)
-if [ -f /ros_gz_ws/install/setup.bash ]; then
-  source /ros_gz_ws/install/setup.bash
-fi
-
-# Source your custom workspace
-if [ -f /ros2_ws/install/setup.bash ]; then
-  source /ros2_ws/install/setup.bash
-fi
-
-# Execute the command passed into the Docker container
-exec "$@"
+source "${MAKO_WORKSPACE:-/opt/mako_ws}/install/setup.bash"
+case "${1:-simulation}" in
+  simulation) if (($#)); then shift; fi; exec python3 "${MAKO_WORKSPACE:-/opt/mako_ws}/docker/simulation.py" "$@" ;;
+  doctor) shift; exec python3 "${MAKO_WORKSPACE:-/opt/mako_ws}/docker/doctor.py" "$@" ;;
+  *) exec "$@" ;;
+esac

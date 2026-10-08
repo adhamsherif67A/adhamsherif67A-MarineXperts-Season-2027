@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/boda/mako_ws/build/robot_description
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/mako-pool-waves.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,6 +73,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/robot_description_uninstall.dir/clean
+clean: CMakeFiles/mako-pool-waves.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -126,6 +127,32 @@ robot_description_uninstall: CMakeFiles/robot_description_uninstall.dir/rule
 CMakeFiles/robot_description_uninstall.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_description_uninstall.dir/build.make CMakeFiles/robot_description_uninstall.dir/clean
 .PHONY : CMakeFiles/robot_description_uninstall.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mako-pool-waves.dir
+
+# All Build rule for target.
+CMakeFiles/mako-pool-waves.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/boda/mako_ws/build/robot_description/CMakeFiles --progress-num=1,2 "Built target mako-pool-waves"
+.PHONY : CMakeFiles/mako-pool-waves.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mako-pool-waves.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boda/mako_ws/build/robot_description/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mako-pool-waves.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/boda/mako_ws/build/robot_description/CMakeFiles 0
+.PHONY : CMakeFiles/mako-pool-waves.dir/rule
+
+# Convenience name for target.
+mako-pool-waves: CMakeFiles/mako-pool-waves.dir/rule
+.PHONY : mako-pool-waves
+
+# clean rule for target.
+CMakeFiles/mako-pool-waves.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mako-pool-waves.dir/build.make CMakeFiles/mako-pool-waves.dir/clean
+.PHONY : CMakeFiles/mako-pool-waves.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

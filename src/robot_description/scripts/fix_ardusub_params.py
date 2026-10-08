@@ -21,12 +21,20 @@ PARAMETER_DOUBLE = 3
 # Parameters to set for clean thruster stop on neutral stick / disarm.
 # Values are (value, ROS ParameterValue type).
 PARAMS = {
+    # MAVROS apm.launch sends as system 1. ArduSub 4.7 accepts
+    # MANUAL_CONTROL only from its configured GCS system ID.
+    "MAV_GCS_SYSID": (1, PARAMETER_INTEGER),
+
     # ── EKF3 STATE ESTIMATION ───────────────────────────────────────────────
     # Gazebo's air-pressure sensor is atmospheric, not hydrostatic, and its
-    # value is invalid for an underwater vehicle.  The launch file relays
-    # Gazebo odometry to /mavros/odometry/out; source 6 makes EKF3 use that
+    # value is invalid for an underwater vehicle. The launch selects visual
+    # or ground-truth odometry for /mavros/odometry/out; source 6 makes EKF3 use that
     # MAVLink ExternalNav stream for a consistent XYZ pose, velocity, and yaw.
-    "EK3_SRC1_POSXY":  (6, PARAMETER_DOUBLE),
+    "VISO_TYPE":      (3, PARAMETER_INTEGER),
+    "VISO_POS_X":     (0.0, PARAMETER_DOUBLE),
+    "VISO_POS_Y":     (0.0, PARAMETER_DOUBLE),
+    "VISO_POS_Z":     (0.0, PARAMETER_DOUBLE),
+    "EK3_SRC1_POSXY":  (6, PARAMETER_INTEGER),
     "EK3_SRC1_POSZ":   (6, PARAMETER_INTEGER),
     "EK3_SRC1_VELXY":  (6, PARAMETER_INTEGER),
     "EK3_SRC1_VELZ":   (6, PARAMETER_INTEGER),
@@ -41,6 +49,11 @@ PARAMS = {
     # This URDF has four vectored horizontal and two vertical thrusters.  Its
     # Gazebo channel routing implements ArduSub's six-thruster VECTORED frame.
     "FRAME_CONFIG":    (1, PARAMETER_INTEGER),
+    "MOT_PWM_MIN": (1240, PARAMETER_INTEGER),
+    "MOT_PWM_MAX": (1760, PARAMETER_INTEGER),
+    # Preserve the Gazebo mixer polarity for upward heave and restoring roll.
+    "MOT_5_DIRECTION": (1, PARAMETER_INTEGER),
+    "MOT_6_DIRECTION": (1, PARAMETER_INTEGER),
 
     # ── THRUSTER SPIN-ARM (KEY FIX) ──────────────────────────────────────────
     # T200 thrusters are bidirectional – no minimum spin needed when armed.
@@ -54,7 +67,7 @@ PARAMS = {
 
     # ── DISARM BEHAVIOR ───────────────────────────────────────────────────────
     # 0 = on disarm, ArduSub outputs 1500 µs (neutral = 0 N with our deadband)
-    # 1 = on disarm, outputs MOT_PWM_MIN (1100 µs) which is max reverse thrust!
+    # 1 = on disarm, outputs MOT_PWM_MIN, which commands reverse thrust instead of neutral!
     "MOT_SAFE_DISARM":  (0, PARAMETER_INTEGER),   # keep 0 (already correct in mav.parm)
 
     # ── SPOOL TIME ────────────────────────────────────────────────────────────

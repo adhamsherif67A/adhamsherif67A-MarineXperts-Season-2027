@@ -23,3 +23,26 @@ AHRS_ORIENTATION 0
 # Avoid a simulated GCS failsafe changing modes / commanding motors while
 # testing the estimator.
 FS_GCS_ENABLE 0
+
+# Match the MAVLink sender ID of the standard MAVROS apm.launch.
+MAV_GCS_SYSID 1
+
+# Vertical T200 output polarity (motors 5 and 6).
+MOT_5_DIRECTION 1
+MOT_6_DIRECTION 1
+
+MOT_PWM_MAX 1760
+
+MOT_PWM_MIN 1240
+
+# Apply the full simulator setup before the first motor output.
+VISO_TYPE 3
+VISO_POS_X 0.0
+VISO_POS_Y 0.0
+VISO_POS_Z 0.0
+MOT_SPIN_ARM 0.0
+MOT_SPIN_MIN 0.0
+MOT_SAFE_DISARM 0
+MOT_SPOOL_TIME 0.0
+FS_PILOT_TIMEOUT 10.0
+THR_DZ 100

@@ -310,11 +310,17 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "config" "launch" "meshes" "textures" "urdf" "worlds" "DESTINATION" "share/robot_description")
-ament_cmake_symlink_install_directory("/home/boda/mako_ws/src/robot_description" DIRECTORY "config" "launch" "meshes" "textures" "urdf" "worlds" "DESTINATION" "share/robot_description")
+# install("TARGETS" "mako-pool-waves" "LIBRARY_DESTINATION" "lib")
+include("/home/boda/mako_ws/build/robot_description/ament_cmake_symlink_install_targets_0_${CMAKE_INSTALL_CONFIG_NAME}.cmake")
 
-# install(FILES "package.xml" "DESTINATION" "share/robot_description")
-ament_cmake_symlink_install_files("/home/boda/mako_ws/src/robot_description" FILES "package.xml" "DESTINATION" "share/robot_description")
+# install(DIRECTORY "config" "launch" "meshes" "urdf" "worlds" "DESTINATION" "share/robot_description")
+ament_cmake_symlink_install_directory("/home/boda/mako_ws/src/robot_description" DIRECTORY "config" "launch" "meshes" "urdf" "worlds" "DESTINATION" "share/robot_description")
+
+# install(FILES "package.xml" "TF2_MODEL.md" "ZED2I_SIM.md" "ZED_VO.md" "DESTINATION" "share/robot_description")
+ament_cmake_symlink_install_files("/home/boda/mako_ws/src/robot_description" FILES "package.xml" "TF2_MODEL.md" "ZED2I_SIM.md" "ZED_VO.md" "DESTINATION" "share/robot_description")
+
+# install(PROGRAMS "scripts/cloud_frame_relay.py" "scripts/check_sim_tf.py" "scripts/gz_odom_to_mavros.py" "scripts/fix_ardusub_params.py" "scripts/local_waypoint_mission.py" "DESTINATION" "lib/robot_description")
+ament_cmake_symlink_install_programs("/home/boda/mako_ws/src/robot_description" PROGRAMS "scripts/cloud_frame_relay.py" "scripts/check_sim_tf.py" "scripts/gz_odom_to_mavros.py" "scripts/fix_ardusub_params.py" "scripts/local_waypoint_mission.py" "DESTINATION" "lib/robot_description")
 
 # install(FILES "/home/boda/mako_ws/build/robot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/boda/mako_ws/src/robot_description" FILES "/home/boda/mako_ws/build/robot_description/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/robot_description" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

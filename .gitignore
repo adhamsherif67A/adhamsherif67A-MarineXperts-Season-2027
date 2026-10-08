@@ -1,0 +1,28 @@
+
+# Workspace-local optional visual-odometry runtime
+.deps/
+
+/gui/runs/
+/gui/**/__pycache__/
+
+# Generated ROS, simulator and editor state (existing tracked files are unaffected).
+/build/
+/install/
+/log/
+/logs/
+/src/build/
+/src/install/
+/src/log/
+/.gz/
+/.sdformat/
+/.vscode/
+/.aws/
+/.codex/
+/.agents/
+**/__pycache__/
+*.pyc
+/eeprom.bin
+/mav*.parm
+/mav*.tlog*
+/dumpcore.sh_*.out
+/dumpstack.sh_*.out

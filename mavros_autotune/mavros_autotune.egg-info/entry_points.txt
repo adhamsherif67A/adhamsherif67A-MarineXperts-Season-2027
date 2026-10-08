@@ -1,0 +1,3 @@
+[console_scripts]
+mavros_autotune = mavros_autotune.autotune_node:main
+

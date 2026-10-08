@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mako Pilot
+Comment=MarineXperts underwater simulation and ROV pilot station
+Exec=/home/boda/Software2026/run_mako_gui.sh
+Icon=/home/boda/mako_ws/src/robot_description/worlds/assets/team_logo/team_logo.png
+Terminal=false
+Categories=Science;Engineering;
+StartupNotify=true

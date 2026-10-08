@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  robot_description.urdf.xacro  -  CORRECTED for ArduSub SITL stability
+
+  Changes vs previous version:
+    1. Added-mass terms negated (Fossen convention) - was the main divergence source
+    2. Inertial + buoyancy collision MOVED to base_link so hydrodynamics/buoyancy
+       cannot land on a 0.01 kg ghost link after URDF fixed-joint lumping
+    3. IMU update rate 250 -> 1000 Hz
+    4. Buoyancy box resized: now +0.194 kg positively buoyant (was -0.008 kg)
+    5. CG-CB separation 50 mm -> 12 mm (matches a real BlueROV2-class hull)
+    6. torque_coefficient 0.0095 -> 0.0005 (real T200 Kq/Kt ratio)
+    7. velocity_control=true on all 6 thrusters (bypasses the internal joint PID)
+    8. Asymmetric thrust limits (+51.5 N fwd / -40.0 N rev) like a real T200
+    9. Thruster position comments corrected to the true base_link frame
+-->
+<robot name="robot_description" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ================= INCLUDES ================= -->
+  <xacro:include filename="ardusub.urdf.xacro" />
+
+  <!-- ================= BASE LINK =================
+       base_link is ROS FLU: +X forward, +Y left, +Z up.
+       ALL dynamics live here: mass, inertia, buoyancy collision, hydrodynamics.
+       This is deliberate - URDF fixed joints get lumped into the parent link
+       during SDF conversion, and base_link is the one link guaranteed to survive.
+  -->
+  <link name="base_link">
+    <inertial>
+      <!-- CG 12 mm below CB (was 50 mm - that made a 1.3 Hz pendulum that
+           ArduSub's default roll/pitch gains could not track) -->
+      <origin xyz="0.00248 0 -0.012" rpy="0 0 0" />
+      <mass value="20.277556" />
+      <!-- Inertia tensor permuted from the SolidWorks frame into base_link axes:
+           base X <- -cb Z, base Y <- -cb X, base Z <- +cb Y -->
+      <inertia
+        ixx="0.143796" ixy="0.0" ixz="0.0"
+        iyy="0.130363" iyz="0.0" izz="0.128936" />
+    </inertial>
+
+    <!-- Buoyancy volume. 0.45 x 0.30 x 0.1556 = 0.021006 m^3
+         -> 0.021006 * 998 = 20.964 kg displaced
+         Total vehicle mass = 20.7696 kg  ->  net +0.194 kg POSITIVE.
+         ALT_HOLD needs a non-zero steady-state offset for its I-term to settle on. -->
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.45 0.30 0.1556" />
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ================= CENTER BODY LINK (visual + thruster mount) ================= -->
+  <joint name="base_to_center_body" type="fixed">
+    <parent link="base_link" />
+    <child link="center_body_link" />
+    <origin xyz="0 0 0" rpy="1.5708 0 -1.5708" />
+  </joint>
+
+  <link name="center_body_link">
+    <!-- Mass moved to base_link; keep a token inertia so SDF conversion is clean -->
+    <inertial>
+      <mass value="0.001" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/center_body_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+
+  <!-- ================= IMU SENSOR LINK ================= -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+
+  <!-- Coincident with base_link (ROS FLU). The ArduPilot plugin handles
+       FLU -> FRD/NED itself, so no second rotation here. -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ================= THRUSTER 1 (REAR RIGHT in base_link) =================
+       base_link position: x=-0.1764  y=-0.13838
+       positive thrust pushes:  BACK-LEFT   -> ArduSub MOT_3
+  -->
+  <link name="t1_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00005" ixy="0" ixz="0" iyy="0.00005" iyz="0" izz="0.00005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/t1_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="t1_joint" type="continuous">
+    <origin xyz="0.13838 -0.054 0.1764" rpy="0 0.7854 -3.1416" />
+    <parent link="center_body_link" />
+    <child link="t1_link" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.05" friction="0.01" />
+  </joint>
+
+  <!-- ================= THRUSTER 2 (REAR LEFT in base_link) =================
+       base_link position: x=-0.1764  y=+0.13844
+       positive thrust pushes:  BACK-RIGHT  -> ArduSub MOT_4
+  -->
+  <link name="t2_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00005" ixy="0" ixz="0" iyy="0.00005" iyz="0" izz="0.00005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/t2_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="t2_joint" type="continuous">
+    <origin xyz="-0.13844 -0.054 0.1764" rpy="0 0.7854 0" />
+    <parent link="center_body_link" />
+    <child link="t2_link" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.05" friction="0.01" />
+  </joint>
+
+  <!-- ================= THRUSTER 3 (FRONT RIGHT in base_link) =================
+       base_link position: x=+0.13678  y=-0.13838
+       positive thrust pushes:  FORWARD-LEFT -> ArduSub MOT_1
+  -->
+  <link name="t3_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00005" ixy="0" ixz="0" iyy="0.00005" iyz="0" izz="0.00005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/t3_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="t3_joint" type="continuous">
+    <origin xyz="0.13838 -0.054 -0.13678" rpy="3.1416 0.7854 0" />
+    <parent link="center_body_link" />
+    <child link="t3_link" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.05" friction="0.01" />
+  </joint>
+
+  <!-- ================= THRUSTER 4 (FRONT LEFT in base_link) =================
+       base_link position: x=+0.13678  y=+0.13844
+       positive thrust pushes:  FORWARD-RIGHT -> ArduSub MOT_2
+  -->
+  <link name="t4_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00005" ixy="0" ixz="0" iyy="0.00005" iyz="0" izz="0.00005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/t4_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="t4_joint" type="continuous">
+    <origin xyz="-0.13844 -0.054 -0.13678" rpy="3.1416 -0.7854 0" />
+    <parent link="center_body_link" />
+    <child link="t4_link" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.05" friction="0.01" />
+  </joint>
+
+  <!-- ================= THRUSTER 5 (VERTICAL RIGHT in base_link) =================
+       base_link position: y=-0.16097  ->  RIGHT side
+       positive thrust pushes:  UP  -> ArduSub MOT_5 (needs negative multiplier)
+  -->
+  <link name="t5_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00005" ixy="0" ixz="0" iyy="0.00005" iyz="0" izz="0.00005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/t5_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="t5_joint" type="continuous">
+    <origin xyz="0.16097 0.053527 0.01981" rpy="-1.5708 -0.0014872 0" />
+    <parent link="center_body_link" />
+    <child link="t5_link" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.05" friction="0.01" />
+  </joint>
+
+  <!-- ================= THRUSTER 6 (VERTICAL LEFT in base_link) =================
+       base_link position: y=+0.16103  ->  LEFT side
+       positive thrust pushes:  UP  -> ArduSub MOT_6 (needs negative multiplier)
+  -->
+  <link name="t6_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.05" />
+      <inertia ixx="0.00005" ixy="0" ixz="0" iyy="0.00005" iyz="0" izz="0.00005" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/t6_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="t6_joint" type="continuous">
+    <origin xyz="-0.16103 0.053527 0.01981" rpy="-1.5708 -0.0014872 0" />
+    <parent link="center_body_link" />
+    <child link="t6_link" />
+    <axis xyz="0 0 1" />
+    <dynamics damping="0.05" friction="0.01" />
+  </joint>
+
+  <!-- ================= ZED 2i DEPTH CAMERA ================= -->
+  <link name="zed_link">
+    <inertial>
+      <origin xyz="0 -0.000181 -0.019269" rpy="0 0 0" />
+      <mass value="0.170323" />
+      <inertia
+        ixx="3.28035E-05" ixy="0.0" ixz="0.0"
+        iyy="3.92942E-04" iyz="0.0" izz="3.85039E-04" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/zed_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="zed_joint" type="fixed">
+    <origin xyz="2.3687E-05 -0.0048463 0.2623" rpy="0 -1.5708 -1.5708" />
+    <parent link="center_body_link" />
+    <child link="zed_link" />
+  </joint>
+
+  <!-- ================= BAR30 PRESSURE SENSOR ================= -->
+  <!-- NOTE: ArduSub SITL takes depth from the ArduPilot plugin's FDM position,
+       NOT from this sensor. It is here only for your own ROS 2 depth topic. -->
+  <link name="bar30_link">
+    <inertial>
+      <origin xyz="0 0 0.006029" rpy="0 0 0" />
+      <mass value="0.001669" />
+      <inertia
+        ixx="4.91084E-08" ixy="0.0" ixz="0.0"
+        iyy="4.91084E-08" iyz="0.0" izz="3.46680E-08" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://robot_description/meshes/bar30_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.792156 0.819607 0.933333 1" />
+      </material>
+    </visual>
+  </link>
+  <joint name="bar30_joint" type="fixed">
+    <origin xyz="0.00023795 0 -0.16" rpy="0 -0.0014872 0" />
+    <parent link="center_body_link" />
+    <child link="bar30_link" />
+  </joint>
+
+  <!-- ================= GAZEBO SENSORS & PLUGINS ================= -->
+
+  <!-- IMU at 1000 Hz. ArduSub's inner loop is 400 Hz; 250 Hz fed it stale
+       samples and added phase lag that showed up as STABILIZE oscillation. -->
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>1</always_on>
+      <update_rate>1000</update_rate>
+      <imu>
+        <angular_velocity>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.0002</stddev></noise></z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></x>
+          <y><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></y>
+          <z><noise type="gaussian"><mean>0</mean><stddev>0.017</stddev></noise></z>
+        </linear_acceleration>
+      </imu>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="zed_link">
+    <sensor name="zed2i_camera" type="rgbd_camera">
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <camera>
+        <horizontal_fov>1.91986</horizontal_fov>
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.2</near>
+          <far>15.0</far>
+        </clip>
+      </camera>
+      <topic>robot_description/zed2i</topic>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="bar30_link">
+    <sensor name="bar30_sensor" type="air_pressure">
+      <always_on>1</always_on>
+      <update_rate>50</update_rate>
+      <air_pressure>
+        <reference_altitude>0</reference_altitude>
+        <pressure>
+          <noise type="gaussian">
+            <mean>0</mean>
+            <stddev>30</stddev>
+          </noise>
+        </pressure>
+      </air_pressure>
+    </sensor>
+  </gazebo>
+
+  <!-- ================= BLUE ROBOTICS T200 THRUSTERS =================
+       velocity_control=true  -> skip the plugin's internal joint-velocity PID.
+       With 0.05 kg / 5e-5 kg.m^2 rotors that PID rang badly and put a laggy,
+       oscillating actuator in series with ArduSub's control loop.
+
+       torque_coefficient 0.0095 -> 0.0005. Real T200 Kq/Kt is ~0.02-0.03,
+       not 0.5. The old value dumped a huge reaction torque into yaw on every
+       heave command (the "vertical thrust causes yaw" symptom).
+
+       min_thrust_cmd -40.0: a T200 makes ~5.25 kgf forward but only ~4.1 kgf
+       in reverse. ArduSub already knows this; now the sim matches.
+  -->
+
+  <!-- T1 - Rear Right - CCW prop -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>robot_description</namespace>
+      <joint_name>t1_joint</joint_name>
+      <fluid_density>998</fluid_density>
+      <thrust_coefficient>0.019</thrust_coefficient>
+      <torque_coefficient>0.0005</torque_coefficient>
+      <propeller_diameter>0.076</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.5</max_thrust_cmd>
+      <min_thrust_cmd>-40.0</min_thrust_cmd>
+    </plugin>
+  </gazebo>
+
+  <!-- T2 - Rear Left - CCW prop -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>robot_description</namespace>
+      <joint_name>t2_joint</joint_name>
+      <fluid_density>998</fluid_density>
+      <thrust_coefficient>0.019</thrust_coefficient>
+      <torque_coefficient>0.0005</torque_coefficient>
+      <propeller_diameter>0.076</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.5</max_thrust_cmd>
+      <min_thrust_cmd>-40.0</min_thrust_cmd>
+    </plugin>
+  </gazebo>
+
+  <!-- T3 - Front Right - CW prop -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>robot_description</namespace>
+      <joint_name>t3_joint</joint_name>
+      <fluid_density>998</fluid_density>
+      <thrust_coefficient>0.019</thrust_coefficient>
+      <torque_coefficient>-0.0005</torque_coefficient>
+      <propeller_diameter>0.076</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.5</max_thrust_cmd>
+      <min_thrust_cmd>-40.0</min_thrust_cmd>
+    </plugin>
+  </gazebo>
+
+  <!-- T4 - Front Left - CW prop -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>robot_description</namespace>
+      <joint_name>t4_joint</joint_name>
+      <fluid_density>998</fluid_density>
+      <thrust_coefficient>0.019</thrust_coefficient>
+      <torque_coefficient>-0.0005</torque_coefficient>
+      <propeller_diameter>0.076</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.5</max_thrust_cmd>
+      <min_thrust_cmd>-40.0</min_thrust_cmd>
+    </plugin>
+  </gazebo>
+
+  <!-- T5 - Vertical Right - CW prop (opposite handedness to T6 so heave
+       reaction torque cancels instead of yawing the vehicle) -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>robot_description</namespace>
+      <joint_name>t5_joint</joint_name>
+      <fluid_density>998</fluid_density>
+      <thrust_coefficient>0.019</thrust_coefficient>
+      <torque_coefficient>-0.0005</torque_coefficient>
+      <propeller_diameter>0.076</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.5</max_thrust_cmd>
+      <min_thrust_cmd>-40.0</min_thrust_cmd>
+    </plugin>
+  </gazebo>
+
+  <!-- T6 - Vertical Left - CCW prop -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <namespace>robot_description</namespace>
+      <joint_name>t6_joint</joint_name>
+      <fluid_density>998</fluid_density>
+      <thrust_coefficient>0.019</thrust_coefficient>
+      <torque_coefficient>0.0005</torque_coefficient>
+      <propeller_diameter>0.076</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>51.5</max_thrust_cmd>
+      <min_thrust_cmd>-40.0</min_thrust_cmd>
+    </plugin>
+  </gazebo>
+
+  <!-- ================= STATE PUBLISHERS ================= -->
+  <gazebo>
+    <plugin filename="gz-sim-joint-state-publisher-system"
+            name="gz::sim::systems::JointStatePublisher" />
+  </gazebo>
+
+  <gazebo>
+    <plugin filename="gz-sim-odometry-publisher-system"
+            name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <odom_publish_frequency>50</odom_publish_frequency>
+    </plugin>
+  </gazebo>
+
+</robot>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <gazebo>
+    <plugin filename="libArduPilotPlugin.so" name="gz::sim::v8::systems::ArduPilotPlugin">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      <gazeboXYZToNED>0 0 0 3.141593 0 1.570796</gazeboXYZToNED>
+      <imuName>imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <lock_step>1</lock_step>
+
+      <!-- MOT_1 : Front Right -> t3_joint  (pushes forward-left, yaws CCW) -->
+      <control channel="0">
+        <type>COMMAND</type>
+        <jointName>t3_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t3_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- MOT_2 : Front Left -> t4_joint  (pushes forward-right, yaws CW) -->
+      <control channel="1">
+        <type>COMMAND</type>
+        <jointName>t4_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t4_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- MOT_3 : Rear Right -> t1_joint  (pushes back-left, yaws CW)
+           WAS -103.0  ->  now +103.0 -->
+      <control channel="2">
+        <type>COMMAND</type>
+        <jointName>t1_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t1_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- MOT_4 : Rear Left -> t2_joint  (pushes back-right, yaws CCW)
+           WAS -103.0  ->  now +103.0 -->
+      <control channel="3">
+        <type>COMMAND</type>
+        <jointName>t2_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t2_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- MOT_5 : Vertical RIGHT -> t5_joint
+           WAS wired to t6_joint (left) - this inverted roll control -->
+      <control channel="4">
+        <type>COMMAND</type>
+        <jointName>t5_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>-103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t5_joint/cmd_thrust</cmd_topic>
+      </control>
+
+      <!-- MOT_6 : Vertical LEFT -> t6_joint
+           WAS wired to t5_joint (right) - this inverted roll control -->
+      <control channel="5">
+        <type>COMMAND</type>
+        <jointName>t6_joint</jointName>
+        <offset>-0.5</offset>
+        <multiplier>-103.0</multiplier>
+        <servo_min>1100</servo_min>
+        <servo_max>1900</servo_max>
+        <cmd_topic>/model/robot_description/joint/t6_joint/cmd_thrust</cmd_topic>
+      </control>
+
+    </plugin>
+  </gazebo>
+
+</robot>
