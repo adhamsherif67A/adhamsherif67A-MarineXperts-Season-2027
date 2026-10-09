@@ -1,7 +1,7 @@
-# MarineXperts Mako Pilot
+# MarineXperts Operation MX
 
-Desktop application: **Mako Pilot**, installed in Software2026 and the application menu.
-Double-click `/home/boda/Desktop/MakoPilot.desktop`, or run
+Desktop application: **Operation MX**, installed in Software2026 and the application menu.
+Double-click `/home/boda/Desktop/OperationMX.desktop`, or run
 `/home/boda/Software2026/run_mako_gui.sh`.
 
 Choose Team pool or Ocean, then **Start simulation**. This runs the commands from
@@ -12,6 +12,13 @@ render on NVIDIA EGL when the driver is available; headless does not disable vid
 The launch also adds the working Harmonic ArduPilot plugin build directory
 `~/ardupilot/ardupilot_gazebo/build`, so Desktop startup does not rely on a terminal
 export or the incompatible Gazebo 11 plugin in `/usr/local/lib`.
+
+**RViz** opens the validated odometry/TF viewer in the simulation's ROS domain
+with simulation time enabled; start the simulation to enable this button.
+**QGroundControl** opens its executable or AppImage. If it is not found, select
+it once in the file picker; the application remembers that path. You can also
+set `MAKO_QGROUNDCONTROL` to its executable path. The desktop and window icon
+use the supplied Operation MX artwork.
 
 SITL loads the complete simulation parameter file with `--add-param-file` before
 its first motor output. This includes PWM limits 1240–1760 and vertical motor

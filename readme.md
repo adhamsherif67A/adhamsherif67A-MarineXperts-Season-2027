@@ -205,6 +205,14 @@ Use `vision` to test camera-based pose estimation; it does not consume Gazebo
 pose as an estimator input. Textured, visible scenes and sufficient image rate
 are necessary for visual tracking.
 
+In vision mode, the validation relay owns `odom -> base_link` and forwards
+only accepted poses to ArduSub. It rejects position/orientation jumps using
+limits of 2 m/s and 3 rad/s, in addition to timestamp and covariance checks.
+The comparison window is capped at 0.2 seconds so a tracking outage cannot
+authorize a larger jump. Rapid yaw over repetitive pool tiles can still lose
+tracking; rejected poses do not update TF or ExternalNav. If tracking cannot
+recover, reset the simulation to reset its pose and the visual estimator together.
+
 ### Optional 60 Hz pilot feed
 
 ```bash
@@ -255,9 +263,22 @@ Camera bridges are lazy: subscribing activates the relevant feeds. Use simulated
 time for your own ROS nodes and RViz. With GUI forwarding enabled, launch RViz from this shell, for
 example `ros2 launch robot_description view_tf.launch.py`.
 
+The model viewer includes a **Validated odometry** display on
+`/mavros/odometry/out`, with fixed frame `odom` and Best Effort subscription
+QoS. This works with either selected odometry source. Raw visual odometry
+can contain invalid tracking-loss poses and should not be used for this display.
+
 The default ROS domain is **42**. To inspect from host ROS tools, source your ROS
 installation and set `ROS_DOMAIN_ID=42` and `RMW_IMPLEMENTATION=rmw_fastrtps_cpp`.
 Set `ROS_DOMAIN_ID` before `docker/run.sh` to select another domain.
+
+For the default simulation domain, open the host viewer with:
+
+```bash
+source /opt/ros/humble/setup.bash
+source install/setup.bash
+ROS_DOMAIN_ID=42 RMW_IMPLEMENTATION=rmw_fastrtps_cpp ros2 launch robot_description view_tf.launch.py
+```
 
 ## 7. Stop, reset and retain logs
 

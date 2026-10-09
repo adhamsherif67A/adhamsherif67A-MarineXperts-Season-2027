@@ -1,15 +1,16 @@
-"""MarineXperts Mako desktop pilot station."""
+"""MarineXperts Operation MX desktop pilot station."""
 import os
+import shutil
 from pathlib import Path
 import sys
 import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from PyQt5.QtCore import Qt,QTimer,pyqtSignal,QRectF,QProcess,QLockFile,QStandardPaths
+from PyQt5.QtCore import Qt,QTimer,pyqtSignal,QRectF,QProcess,QLockFile,QStandardPaths,QProcessEnvironment,QSettings
 from PyQt5.QtGui import QColor,QFont,QImage,QPainter,QPixmap,QIcon
 from PyQt5.QtWidgets import (QApplication,QMainWindow,QWidget,QVBoxLayout,QHBoxLayout,
     QLabel,QPushButton,QComboBox,QFrame,QGridLayout,QProgressBar,QPlainTextEdit,
-    QSizePolicy,QMessageBox,QShortcut)
+    QSizePolicy,QMessageBox,QShortcut,QFileDialog)
 from .simulation import WORKSPACE,DOMAIN,SessionThread
 from .ros_worker import RosWorker
 
@@ -100,9 +101,9 @@ class PilotWindow(QMainWindow):
 
     def __init__(self,start_workers=True):
         super().__init__()
-        self.setWindowTitle('Mako Pilot · MarineXperts')
+        self.setWindowTitle('Operation MX')
         # Bound the window icon: the original logo exceeds X11 property limits.
-        icon = QPixmap(str(WORKSPACE/'src/robot_description/worlds/assets/team_logo/team_logo.png'))
+        icon = QPixmap(str(Path(__file__).resolve().parent/'assets/operation_mx_icon.png'))
         self.setWindowIcon(QIcon(icon.scaled(256,256,Qt.KeepAspectRatio,Qt.SmoothTransformation)))
         self.setMinimumSize(1120,740);self.resize(1500,950);self.setStyleSheet(STYLE)
         self.phase='Stopped';self.closing=False;self.finished=False;self.started_at=None
@@ -112,6 +113,8 @@ class PilotWindow(QMainWindow):
         self.session_state.connect(self.on_phase);self.log_message.connect(self.log)
         self.recorder=QProcess(self);self.recorder.finished.connect(self.recording_finished)
         self.recorder.errorOccurred.connect(lambda error:self.log('Screen recorder could not start.'))
+        self.external_tools={}
+        self.settings=QSettings('MarineXperts','Operation MX')
         self.record_started=None
         central=QWidget();self.setCentralWidget(central)
         root=QVBoxLayout(central);root.setContentsMargins(24,18,24,16);root.setSpacing(18)
@@ -122,7 +125,7 @@ class PilotWindow(QMainWindow):
         if logo_path.exists():emblem.setPixmap(QPixmap(str(logo_path)).scaled(64,78,Qt.KeepAspectRatio,Qt.SmoothTransformation))
         header.addWidget(emblem)
         titles=QVBoxLayout();brand=label('MARINEXPERTS');brand.setStyleSheet(f'color:{GOLD};font-size:12px;font-weight:600;')
-        title=label('Mako Pilot');title.setStyleSheet('font-size:30px;font-weight:600;')
+        title=label('Operation MX');title.setStyleSheet('font-size:30px;font-weight:600;')
         titles.addWidget(brand);titles.addWidget(title);titles.addWidget(label('UNDERWATER SIMULATION STATION','caption'));header.addLayout(titles);header.addStretch()
         self.phase_label=label('●  SIMULATION STOPPED');self.phase_label.setStyleSheet(f'color:{MUTED};font-weight:600;')
         header.addWidget(self.phase_label);header.addSpacing(22)
@@ -173,6 +176,8 @@ class PilotWindow(QMainWindow):
         for name in ['First person','Third person']:
             button=QPushButton(name);button.setCheckable(True);button.setChecked(name=='First person')
             button.clicked.connect(lambda checked,name=name:self.switch_view(name));views.addWidget(button);self.view_buttons[name]=button
+        self.rviz_button=QPushButton('RViz');self.rviz_button.clicked.connect(self.open_rviz);views.addWidget(self.rviz_button)
+        self.qground_button=QPushButton('QGroundControl');self.qground_button.clicked.connect(self.open_qground);views.addWidget(self.qground_button)
         video_column.addLayout(views)
         self.canvas=PilotCanvas();video_column.addWidget(self.canvas,1)
         tools=QHBoxLayout();self.view_description=label('ZED left eye · bottom view always visible','caption');tools.addWidget(self.view_description);tools.addStretch()
@@ -189,6 +194,61 @@ class PilotWindow(QMainWindow):
         if start_workers:self.manager.start();self.ros.start()
         self.workers_started=start_workers
 
+    def launch_tool(self,name,program,arguments,ros=False):
+        process=self.external_tools.get(name)
+        if process and process.state()!=QProcess.NotRunning:
+            self.log(name+' is already open.');return
+        process=QProcess(self)
+        environment=QProcessEnvironment.systemEnvironment()
+        if ros:
+            environment.insert('ROS_DOMAIN_ID',str(DOMAIN))
+            environment.insert('RMW_IMPLEMENTATION','rmw_fastrtps_cpp')
+        else:
+            # AppImages provide their own Qt libraries and plugins.
+            for key in ('QT_PLUGIN_PATH','QT_QPA_PLATFORM_PLUGIN_PATH','QML2_IMPORT_PATH','LD_LIBRARY_PATH'):
+                environment.remove(key)
+        process.setProcessEnvironment(environment)
+        process.setProcessChannelMode(QProcess.MergedChannels)
+        process.readyReadStandardOutput.connect(lambda:process.readAllStandardOutput())
+        process.errorOccurred.connect(lambda error:self.log(name+' could not start: '+process.errorString()))
+        process.finished.connect(lambda code,status:self.log(name+' closed'+(' (exit '+str(code)+')' if code else '')+'.'))
+        self.external_tools[name]=process
+        process.start(str(program),arguments)
+        self.log('Opening '+name+'…')
+
+    def open_rviz(self):
+        if self.phase!='Running':
+            self.log('Start simulation before opening RViz.');return
+        program=Path('/opt/ros/humble/lib/rviz2/rviz2')
+        config=WORKSPACE/'install/robot_description/share/robot_description/config/model_tf.rviz'
+        if not program.is_file() or not config.is_file():
+            self.log('RViz or its simulation configuration was not found.');return
+        self.launch_tool('RViz',program,['-d',str(config),'--ros-args','-r','__node:=operation_mx_rviz','-p','use_sim_time:=true'],ros=True)
+
+    def open_qground(self):
+        process=self.external_tools.get('QGroundControl')
+        if process and process.state()!=QProcess.NotRunning:
+            self.log('QGroundControl is already open.');return
+        saved=self.settings.value('qground_executable','',type=str)
+        candidates=[Path(saved)] if saved else []
+        configured=os.environ.get('MAKO_QGROUNDCONTROL','')
+        if configured:candidates.insert(0,Path(configured))
+        for name in ('QGroundControl','qgroundcontrol'):
+            executable=shutil.which(name)
+            if executable:candidates.append(Path(executable))
+        for folder in (Path.home()/'Applications',Path.home()/'Downloads',Path.home()):
+            for pattern in ('*QGround*.AppImage','*qground*.AppImage','*qgc*.AppImage'):
+                candidates.extend(sorted(folder.glob(pattern)))
+        executable=next((path for path in candidates if path.is_file() and os.access(path,os.X_OK)),None)
+        if executable is None:
+            selected,_=QFileDialog.getOpenFileName(self,'Select QGroundControl executable or AppImage',str(Path.home()),'Applications (*.AppImage);;All files (*)')
+            if not selected:return
+            executable=Path(selected)
+            if not os.access(executable,os.X_OK):
+                self.log('The selected QGroundControl file is not executable. Enable its execute permission first.');return
+        self.settings.setValue('qground_executable',str(executable))
+        self.launch_tool('QGroundControl',executable,[])
+
     def action(self,action):
         if action in ['reset','stop']:
             self.stop_recording();self.ros.clear_session()
@@ -197,6 +257,8 @@ class PilotWindow(QMainWindow):
 
     def on_phase(self,phase):
         self.phase=phase
+        self.rviz_button.setEnabled(phase=='Running')
+        self.rviz_button.setToolTip('Open simulation odometry and TF' if phase=='Running' else 'Start simulation to enable RViz')
         active=phase=='Running';idle=phase in ['Stopped','Error']
         self.start_button.setEnabled(idle);self.reset_button.setEnabled(active);self.stop_button.setEnabled(active)
         self.world.setEnabled(idle);self.odometry.setEnabled(idle)
@@ -278,6 +340,8 @@ class PilotWindow(QMainWindow):
         self.log_box.appendPlainText(text)
 
     def closeEvent(self,event):
+        for process in self.external_tools.values():
+            if process.state()!=QProcess.NotRunning:process.terminate()
         if not self.workers_started:event.accept();return
         if self.finished and self.recorder.state()!=QProcess.NotRunning:
             event.ignore();return
@@ -292,12 +356,12 @@ def main():
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling,True)
     QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps,True)
     smoke_test='--smoke-test' in sys.argv
-    app=QApplication(sys.argv);app.setApplicationName('Mako Pilot');app.setOrganizationName('MarineXperts')
-    app.setDesktopFileName('mako-pilot')
-    lock=QLockFile(QStandardPaths.writableLocation(QStandardPaths.TempLocation)+f'/mako-pilot-{os.getuid()}.lock')
+    app=QApplication(sys.argv);app.setApplicationName('Operation MX');app.setOrganizationName('MarineXperts')
+    app.setDesktopFileName('operation-mx')
+    lock=QLockFile(QStandardPaths.writableLocation(QStandardPaths.TempLocation)+f'/Orca-pilot-{os.getuid()}.lock')
     lock.setStaleLockTime(0)
     if not lock.tryLock(0):
-        QMessageBox.information(None,'Mako Pilot','Mako Pilot is already open.');return 0
+        QMessageBox.information(None,'Operation MX','Operation MX is already open.');return 0
     window=PilotWindow()
     available=app.primaryScreen().availableGeometry()
     window.resize(min(1500,available.width()-40),min(950,available.height()-60))
