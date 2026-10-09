@@ -1,0 +1,185 @@
+[0.000000] (-) TimerEvent: {}
+[0.000749] (real_joy) JobQueued: {'identifier': 'real_joy', 'dependencies': OrderedDict()}
+[0.000808] (real_joy) JobStarted: {'identifier': 'real_joy'}
+[0.009415] (real_joy) JobProgress: {'identifier': 'real_joy', 'progress': 'cmake'}
+[0.009966] (real_joy) JobProgress: {'identifier': 'real_joy', 'progress': 'build'}
+[0.010768] (real_joy) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/boda/Software2026/build/real_joy', '--', '-j16', '-l16'], 'cwd': '/home/boda/Software2026/build/real_joy', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_US:en'), ('USER', 'boda'), ('LC_TIME', 'en_US.UTF-8'), ('ROS_PACKAGE_PATH', '/home/boda/install/water_physics_plugin/share:/home/boda/ardupilot_gazebo:/home/boda/mako_ws/install/water_physics_plugin/share'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/usr/local/zed/lib:/home/boda/install/water_physics_plugin/lib:/home/boda/install/mavros_extras/lib:/home/boda/install/mavros/lib:/home/boda/install/libmavconn/lib:/home/boda/install/gs_ros_interfaces/lib:/home/boda/install/control_msgs/lib:/home/boda/install/ardupilot_msgs/lib:/home/boda/mako_ws/install/water_physics_plugin/lib:/home/boda/mako_ws/install/robot_control/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins::/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/home/boda/ardupilot_gazebo/build/ardupilot_gazebo:/home/boda/mako_ws/src/install/water_physics_plugin/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins::/home/boda/ardupilot_gazebo/build'), ('HOME', '/home/boda'), ('CYCLONEDDS_URI', 'file:///home/boda/cyclonedds.xml'), ('OLDPWD', '/home/boda'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'en_US.UTF-8'), ('MANAGERPID', '1409'), ('SYSTEMD_EXEC_PID', '1957'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3009'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu-xorg.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/boda/Software2026/install:/home/boda/ros2_ws/install:/home/boda/install:/home/boda/mako_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'boda'), ('JOURNAL_STREAM', '8:5415'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('PKG_CONFIG_PATH', '/home/boda/install/water_physics_plugin/lib/x86_64-linux-gnu/pkgconfig:/home/boda/install/water_physics_plugin/lib/pkgconfig:/home/boda/mako_ws/install/water_physics_plugin/lib/x86_64-linux-gnu/pkgconfig:/home/boda/mako_ws/install/water_physics_plugin/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu-xorg.default.path'), ('USERNAME', 'boda'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/home/boda/ardupilot_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/usr/local/zed/bin:/home/boda/install/mako_vision/bin:/home/boda/mako_ws/install/mako_vision/bin:/opt/ros/humble/bin:/usr/lib/ccache:/home/boda/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/boda/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/boda-IdeaPad-Gaming-3-15ARH7:@/tmp/.ICE-unix/1760,unix/boda-IdeaPad-Gaming-3-15ARH7:/tmp/.ICE-unix/1760'), ('INVOCATION_ID', 'c7c5518df4594bbaa5b58e3a3d3a847b'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/boda/Software2026/install/real_joy:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:b46d9dcd-318a-419c-b97b-c6285b7b332d'), ('QT_ACCESSIBILITY', '1'), ('ZED_SDK_ROOT', '/usr/local/zed'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GAZEBO_RESOURCE_PATH', '/home/boda/ardupilot_gazebo/worlds:/usr/share/gazebo-11:/home/boda/ardupilot_gazebo/worlds:/usr/share/gazebo-11:'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/boda/Software2026/build/real_joy'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/home/boda/ardupilot_gazebo/build/ardupilot_gazebo:/home/boda/mako_ws/src/install/water_physics_plugin/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins::/home/boda/ardupilot_gazebo/build'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/boda/install/mako_vision_pipeline/lib/python3.10/site-packages:/home/boda/install/mako_vision/lib/python3.10/site-packages:/home/boda/install/gs_ros/lib/python3.10/site-packages:/home/boda/install/crab_detector/lib/python3.10/site-packages:/home/boda/install/ardupilot_msgs/local/lib/python3.10/dist-packages:/home/boda/mako_ws/install/mako_vision/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras')]), 'shell': False}
+[0.059469] (real_joy) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target realjoy_node\x1b[0m\n'}
+[0.078870] (real_joy) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o\x1b[0m\n'}
+[0.099812] (-) TimerEvent: {}
+[0.200132] (-) TimerEvent: {}
+[0.300451] (-) TimerEvent: {}
+[0.400781] (-) TimerEvent: {}
+[0.501119] (-) TimerEvent: {}
+[0.601436] (-) TimerEvent: {}
+[0.701757] (-) TimerEvent: {}
+[0.802096] (-) TimerEvent: {}
+[0.902432] (-) TimerEvent: {}
+[1.002768] (-) TimerEvent: {}
+[1.103103] (-) TimerEvent: {}
+[1.203432] (-) TimerEvent: {}
+[1.303786] (-) TimerEvent: {}
+[1.404197] (-) TimerEvent: {}
+[1.504593] (-) TimerEvent: {}
+[1.604890] (-) TimerEvent: {}
+[1.705253] (-) TimerEvent: {}
+[1.805641] (-) TimerEvent: {}
+[1.906019] (-) TimerEvent: {}
+[2.006391] (-) TimerEvent: {}
+[2.106764] (-) TimerEvent: {}
+[2.207091] (-) TimerEvent: {}
+[2.307383] (-) TimerEvent: {}
+[2.407679] (-) TimerEvent: {}
+[2.507981] (-) TimerEvent: {}
+[2.608253] (-) TimerEvent: {}
+[2.708620] (-) TimerEvent: {}
+[2.808849] (-) TimerEvent: {}
+[2.909092] (-) TimerEvent: {}
+[3.009333] (-) TimerEvent: {}
+[3.109586] (-) TimerEvent: {}
+[3.209860] (-) TimerEvent: {}
+[3.310151] (-) TimerEvent: {}
+[3.410420] (-) TimerEvent: {}
+[3.510684] (-) TimerEvent: {}
+[3.610999] (-) TimerEvent: {}
+[3.711248] (-) TimerEvent: {}
+[3.811526] (-) TimerEvent: {}
+[3.911870] (-) TimerEvent: {}
+[4.012179] (-) TimerEvent: {}
+[4.112446] (-) TimerEvent: {}
+[4.212725] (-) TimerEvent: {}
+[4.313064] (-) TimerEvent: {}
+[4.413323] (-) TimerEvent: {}
+[4.513627] (-) TimerEvent: {}
+[4.613968] (-) TimerEvent: {}
+[4.693448] (real_joy) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:15\x1b[m\x1b[K:\n'}
+[4.693703] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.693819] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kreq\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[4.693925] (real_joy) StderrLine: {'line': b'  110 |     \x1b[01;35m\x1b[Kconst std::shared_ptr<std_srvs::srv::Trigger::Request> req\x1b[m\x1b[K,\n'}
+[4.694007] (real_joy) StderrLine: {'line': b'      |     \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[4.694084] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K At global scope:\n'}
+[4.694159] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:18:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[4.694235] (real_joy) StderrLine: {'line': b'  148 |   static int16_t \x1b[01;31m\x1b[Kaxis_to_mc_\x1b[m\x1b[K\n'}
+[4.694323] (real_joy) StderrLine: {'line': b'      |                  \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.694395] (real_joy) StderrLine: {'line': b'      |                             \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[4.694465] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K}\x1b[m\x1b[K\xe2\x80\x99 at end of input\n'}
+[4.694536] (real_joy) StderrLine: {'line': b'  148 |   static int16_t axis_to_mc_\n'}
+[4.694645] (real_joy) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.694718] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:22:1:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kto match this \xe2\x80\x98\x1b[01m\x1b[K{\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.694833] (real_joy) StderrLine: {'line': b'   22 | \x1b[01;36m\x1b[K{\x1b[m\x1b[K\n'}
+[4.694920] (real_joy) StderrLine: {'line': b'      | \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[4.694980] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KRealJoyNode::RealJoyNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.695016] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:27:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoy_topic_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Knode_topics_\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.695050] (real_joy) StderrLine: {'line': b'   27 |     \x1b[01;31m\x1b[Kjoy_topic_\x1b[m\x1b[K = this->declare_parameter<std::string>("joy_topic", "/joy");\n'}
+[4.695083] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695116] (real_joy) StderrLine: {'line': b'      |     \x1b[32m\x1b[Knode_topics_\x1b[m\x1b[K\n'}
+[4.695148] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:29:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublish_rate_hz_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695182] (real_joy) StderrLine: {'line': b'   29 |     \x1b[01;31m\x1b[Kpublish_rate_hz_\x1b[m\x1b[K = this->declare_parameter<double>("publish_rate_hz", 20.0);\n'}
+[4.695215] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695247] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:30:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoy_timeout_s_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695280] (real_joy) StderrLine: {'line': b'   30 |     \x1b[01;31m\x1b[Kjoy_timeout_s_\x1b[m\x1b[K   = this->declare_parameter<double>("joy_timeout_s", 0.5);\n'}
+[4.695312] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695353] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:32:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_button_index_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695388] (real_joy) StderrLine: {'line': b'   32 |     \x1b[01;31m\x1b[Karm_button_index_\x1b[m\x1b[K = this->declare_parameter<int>("arm_button_index", 6);\n'}
+[4.695421] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695452] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:33:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_mode_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695484] (real_joy) StderrLine: {'line': b'   33 |     \x1b[01;31m\x1b[Karm_mode_\x1b[m\x1b[K = this->declare_parameter<std::string>("arm_mode", "MANUAL");\n'}
+[4.695515] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695552] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:35:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kalt_hold_button_index_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695586] (real_joy) StderrLine: {'line': b'   35 |     \x1b[01;31m\x1b[Kalt_hold_button_index_\x1b[m\x1b[K = this->declare_parameter<int>("alt_hold_button_index", 3);\n'}
+[4.695618] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695650] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:36:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kalt_hold_mode_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695682] (real_joy) StderrLine: {'line': b'   36 |     \x1b[01;31m\x1b[Kalt_hold_mode_\x1b[m\x1b[K         = this->declare_parameter<std::string>("alt_hold_mode", "ALT_HOLD");\n'}
+[4.695720] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695752] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:38:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kcfg_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695789] (real_joy) StderrLine: {'line': b'   38 |     \x1b[01;31m\x1b[Kcfg_\x1b[m\x1b[K.axis_forward   = this->declare_parameter<int>("axis_forward", 1);\n'}
+[4.695836] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~\x1b[m\x1b[K\n'}
+[4.695870] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:60:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmanual_pub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695902] (real_joy) StderrLine: {'line': b'   60 |     \x1b[01;31m\x1b[Kmanual_pub_\x1b[m\x1b[K = this->create_publisher<mavros_msgs::msg::ManualControl>(\n'}
+[4.695934] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.695966] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:63:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kjoy_sub_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.695999] (real_joy) StderrLine: {'line': b'   63 |     \x1b[01;31m\x1b[Kjoy_sub_\x1b[m\x1b[K = this->create_subscription<sensor_msgs::msg::Joy>(\n'}
+[4.696031] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.696062] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:65:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kon_joy\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KRealJoyNode\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.696095] (real_joy) StderrLine: {'line': b'   65 |       std::bind(&RealJoyNode::\x1b[01;31m\x1b[Kon_joy\x1b[m\x1b[K, this, std::placeholders::_1));\n'}
+[4.696127] (real_joy) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.696159] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:67:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.696192] (real_joy) StderrLine: {'line': b'   67 |     \x1b[01;31m\x1b[Karm_client_\x1b[m\x1b[K      = this->create_client<mavros_msgs::srv::CommandBool>("/mavros/cmd/arming");\n'}
+[4.696228] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.696259] (real_joy) StderrLine: {'line': b'      |     \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[4.696291] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:68:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kset_mode_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.696424] (real_joy) StderrLine: {'line': b'   68 |     \x1b[01;31m\x1b[Kset_mode_client_\x1b[m\x1b[K = this->create_client<mavros_msgs::srv::SetMode>("/mavros/set_mode");\n'}
+[4.696483] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.696620] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:77:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.696661] (real_joy) StderrLine: {'line': b'   77 |     \x1b[01;31m\x1b[Kdepth_\x1b[m\x1b[K = std::make_unique<PressureToDepthCm>(this, dp);\n'}
+[4.696699] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.696804] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:79:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_zero_button_index_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.696997] (real_joy) StderrLine: {'line': b'   79 |     \x1b[01;31m\x1b[Kdepth_zero_button_index_\x1b[m\x1b[K = this->declare_parameter<int>("depth_zero_button_index", 0);\n'}
+[4.697089] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.697428] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:80:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdepth_zero_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.697471] (real_joy) StderrLine: {'line': b'   80 |     \x1b[01;31m\x1b[Kdepth_zero_client_\x1b[m\x1b[K = this->create_client<std_srvs::srv::Trigger>("/set_zero_depth");\n'}
+[4.697509] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.697545] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:82:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmode_switcher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.697581] (real_joy) StderrLine: {'line': b'   82 |     \x1b[01;31m\x1b[Kmode_switcher_\x1b[m\x1b[K = std::make_unique<realjoy::ModeSwitcher>(this, [this](const std::string& mode) {\n'}
+[4.697631] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.697669] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:87:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Ktimer_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Ktimer_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.697705] (real_joy) StderrLine: {'line': b'   87 |     \x1b[01;31m\x1b[Ktimer_\x1b[m\x1b[K = this->create_wall_timer(\n'}
+[4.697749] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.697808] (real_joy) StderrLine: {'line': b'      |     \x1b[32m\x1b[Ktimer_t\x1b[m\x1b[K\n'}
+[4.697854] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:89:31:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kon_timer\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[KRealJoyNode\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.697929] (real_joy) StderrLine: {'line': b'   89 |       std::bind(&RealJoyNode::\x1b[01;31m\x1b[Kon_timer\x1b[m\x1b[K, this));\n'}
+[4.698004] (real_joy) StderrLine: {'line': b'      |                               \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.698042] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:91:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Klast_joy_time_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.698157] (real_joy) StderrLine: {'line': b'   91 |     \x1b[01;31m\x1b[Klast_joy_time_\x1b[m\x1b[K = this->now();\n'}
+[4.698218] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.698256] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealJoyNode::request_mode(const string&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.698297] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:116:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kset_mode_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.698764] (real_joy) StderrLine: {'line': b'  116 |     if (!wait_service(\x1b[01;31m\x1b[Kset_mode_client_\x1b[m\x1b[K, "/mavros/set_mode")) return;\n'}
+[4.698848] (real_joy) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.698893] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:119:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kset_mode_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.698931] (real_joy) StderrLine: {'line': b'  119 |     \x1b[01;31m\x1b[Kset_mode_client_\x1b[m\x1b[K->async_send_request(req);\n'}
+[4.698969] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.699006] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealJoyNode::request_arm(bool)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.699043] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:124:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.699081] (real_joy) StderrLine: {'line': b'  124 |     if (!wait_service(\x1b[01;31m\x1b[Karm_client_\x1b[m\x1b[K, "/mavros/cmd/arming")) return;\n'}
+[4.699117] (real_joy) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.699152] (real_joy) StderrLine: {'line': b'      |                       \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[4.699187] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:127:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_client_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Krmw_client_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.699222] (real_joy) StderrLine: {'line': b'  127 |     \x1b[01;31m\x1b[Karm_client_\x1b[m\x1b[K->async_send_request(req);\n'}
+[4.699258] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.699292] (real_joy) StderrLine: {'line': b'      |     \x1b[32m\x1b[Krmw_client_t\x1b[m\x1b[K\n'}
+[4.699326] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealJoyNode::toggle_arm()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.699361] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:132:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdesired_armed_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.699395] (real_joy) StderrLine: {'line': b'  132 |     \x1b[01;31m\x1b[Kdesired_armed_\x1b[m\x1b[K = !desired_armed_;\n'}
+[4.699455] (real_joy) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.699506] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:135:20:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_mode_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.699559] (real_joy) StderrLine: {'line': b'  135 |       request_mode(\x1b[01;31m\x1b[Karm_mode_\x1b[m\x1b[K);\n'}
+[4.699597] (real_joy) StderrLine: {'line': b'      |                    \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[4.699633] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:136:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_delay_timer_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.699670] (real_joy) StderrLine: {'line': b'  136 |       \x1b[01;31m\x1b[Karm_delay_timer_\x1b[m\x1b[K = this->create_wall_timer(\n'}
+[4.699706] (real_joy) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.699740] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K In lambda function:\n'}
+[4.699775] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:140:11:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Karm_delay_timer_\x1b[m\x1b[K\xe2\x80\x99 is not captured\n'}
+[4.699862] (real_joy) StderrLine: {'line': b'  140 |           \x1b[01;31m\x1b[Karm_delay_timer_\x1b[m\x1b[K->cancel();\n'}
+[4.699994] (real_joy) StderrLine: {'line': b'      |           \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.700033] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:138:14:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthe lambda has no capture-default\n'}
+[4.700070] (real_joy) StderrLine: {'line': b'  138 |         [this\x1b[01;36m\x1b[K]\x1b[m\x1b[K() {\n'}
+[4.700105] (real_joy) StderrLine: {'line': b'      |              \x1b[01;36m\x1b[K^\x1b[m\x1b[K\n'}
+[4.700139] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:136:7:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K<typeprefixerror>arm_delay_timer_\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[4.700174] (real_joy) StderrLine: {'line': b'  136 |       \x1b[01;36m\x1b[Karm_delay_timer_\x1b[m\x1b[K = this->create_wall_timer(\n'}
+[4.700228] (real_joy) StderrLine: {'line': b'      |       \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.700266] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid RealJoyNode::toggle_arm()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.700302] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:144:7:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublish_neutral_manual\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.700338] (real_joy) StderrLine: {'line': b'  144 |       \x1b[01;31m\x1b[Kpublish_neutral_manual\x1b[m\x1b[K();\n'}
+[4.700374] (real_joy) StderrLine: {'line': b'      |       \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.700478] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:\x1b[m\x1b[K At global scope:\n'}
+[4.700516] (real_joy) StderrLine: {'line': b'\x1b[01m\x1b[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected unqualified-id at end of input\n'}
+[4.700559] (real_joy) StderrLine: {'line': b'  148 |   static int16_t axis_to_mc_\n'}
+[4.700595] (real_joy) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.700630] (real_joy) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/realjoy_node.dir/build.make:76: CMakeFiles/realjoy_node.dir/src/joystick.cpp.o] Error 1\n'}
+[4.700665] (real_joy) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realjoy_node.dir/all] Error 2\n'}
+[4.700700] (real_joy) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.700742] (real_joy) CommandEnded: {'returncode': 2}
+[4.708374] (real_joy) JobEnded: {'identifier': 'real_joy', 'rc': 2}
+[4.714045] (-) TimerEvent: {}
+[4.718855] (-) EventReactorShutdown: {}

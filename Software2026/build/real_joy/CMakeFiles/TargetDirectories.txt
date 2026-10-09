@@ -1,0 +1,10 @@
+/home/boda/Software2026/build/real_joy/CMakeFiles/uninstall.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/real_joy_uninstall.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/realjoy_node.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/test.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/edit_cache.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/rebuild_cache.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/list_install_components.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/install.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/install/local.dir
+/home/boda/Software2026/build/real_joy/CMakeFiles/install/strip.dir

@@ -1,0 +1,1 @@
+rclcpp;rcl_interfaces;rclpy;sensor_msgs;mavros_msgs;geometry_msgs;nav_msgs;joy;std_srvs;python3-pyqt5;python3-gi;python3-numpy;python3-psutil;rosgraph_msgs;ament_lint_auto;ament_lint_common

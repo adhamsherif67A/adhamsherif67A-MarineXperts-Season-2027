@@ -1,0 +1,4 @@
+[console_scripts]
+rov_gui_gst = RealJoy.rov_gui_gst:main
+zed_to_mavros_pose = RealJoy.zed_to_mavros_pose:main
+

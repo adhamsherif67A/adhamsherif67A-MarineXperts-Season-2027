@@ -1,0 +1,29 @@
+[35m[1mConsolidate compiler generated dependencies of target realjoy_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o[0m
+In file included from [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:14[m[K:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/manual.hpp:[m[K In function ‘[01m[Krealjoy::ManualConfig realjoy::load_manual_config(rclcpp::Node*)[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/manual.hpp:200:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct realjoy::ManualConfig[m[K’ has no member named ‘[01m[Ktrigger_pressed_threshold[m[K’
+  200 |   cfg.[01;31m[Ktrigger_pressed_threshold[m[K = node->declare_parameter<float>("trigger_pressed_threshold", cfg.trigger_pressed_threshold);
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/manual.hpp:200:99:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct realjoy::ManualConfig[m[K’ has no member named ‘[01m[Ktrigger_pressed_threshold[m[K’
+  200 |   cfg.trigger_pressed_threshold = node->declare_parameter<float>("trigger_pressed_threshold", cfg.[01;31m[Ktrigger_pressed_threshold[m[K);
+      |                                                                                                   [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:15[m[K:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:[m[K In member function ‘[01m[Kvoid PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+  110 |     [01;35m[Kconst std::shared_ptr<std_srvs::srv::Trigger::Request> req[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In constructor ‘[01m[KRealJoyNode::RealJoyNode()[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:58:10:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct realjoy::ManualConfig[m[K’ has no member named ‘[01m[Ktrigger_pressed_threshold[m[K’
+   58 |     cfg_.[01;31m[Ktrigger_pressed_threshold[m[K =
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::on_timer()[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:231:81:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct realjoy::ManualConfig[m[K’ has no member named ‘[01m[Ktrigger_pressed_threshold[m[K’
+  231 |     float yaw_left  = (realjoy::safe_axis(last_joy_, cfg_.axis_yaw_left) < cfg_.[01;31m[Ktrigger_pressed_threshold[m[K) ? 1.0f : 0.0f;
+      |                                                                                 [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:232:82:[m[K [01;31m[Kerror: [m[K‘[01m[Kstruct realjoy::ManualConfig[m[K’ has no member named ‘[01m[Ktrigger_pressed_threshold[m[K’
+  232 |     float yaw_right = (realjoy::safe_axis(last_joy_, cfg_.axis_yaw_right) < cfg_.[01;31m[Ktrigger_pressed_threshold[m[K) ? 1.0f : 0.0f;
+      |                                                                                  [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/realjoy_node.dir/build.make:76: CMakeFiles/realjoy_node.dir/src/joystick.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realjoy_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

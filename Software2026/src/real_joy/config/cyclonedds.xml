@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CycloneDDS xmlns="https://cdds.io/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://cdds.io/config https://raw.githubusercontent.com/eclipse-cyclonedds/cyclonedds/master/etc/cyclonedds.xsd">
+    <!-- 
+        CycloneDDS Configuration for real_joy
+        
+        This configuration helps handle network transitions (like WiFi disconnect)
+        by ignoring unreachable peers and specifying preferred network interfaces.
+    -->
+    
+    <Domain id="any">
+        <General>
+            <!-- 
+                Disable participant authentication - useful for local testing 
+                Remove in production if authentication is needed
+            -->
+            <EnableAuthenticaion>false</EnableAuthenticaion>
+            <EnableAutoDefaultSn>false</EnableAutoDefaultSn>
+        </General>
+        
+        <Discovery>
+            <!-- 
+                Reduce discovery interval to faster detect peers on same network
+                But also allow longer timeout for peer handling
+            -->
+            <MinHelloResponseDelay>
+                <Minimum>0</Minimum>
+                <Maximum>1</Maximum>
+            </MinHelloResponseDelay>
+            
+            <MaxParticipants>
+                <!-- Limit participants to reduce memory and network overhead -->
+                <Original>100</Original>
+            </MaxParticipants>
+        </Discovery>
+        
+        <!-- 
+            Network configuration to handle network interface changes
+        -->
+        <Network>
+            <!-- 
+                Ignore specific peer addresses that may become unreachable
+                Add the IPs that appear in your error logs here
+            -->
+            <IgnorePeerAddress>
+                <!-- 172.19.232.73 - appears in error logs -->
+                <Address>172.19.232.73</Address>
+                <!-- 192.168.10.1 - appears in error logs -->
+                <Address>192.168.10.1</Address>
+                <!-- 192.168.10.2 - appears in error logs -->
+                <Address>192.168.10.2</Address>
+            </IgnorePeerAddress>
+            
+            <!-- 
+                Local network interface selection
+                Prefer specific interfaces if available
+                Use 'any' to allow all interfaces
+            -->
+            <Interfaces>
+                <!-- Auto-detect - lets DDS pick best available interface -->
+                <Plugin name="basic">
+                    <AllowMulticast>default</AllowMulticast>
+                </Plugin>
+            </Interfaces>
+        </Network>
+        
+        <!-- 
+            Reduce verbosity of certain log types
+            This prevents console spam during network issues
+        -->
+        <Tracing>
+            <!-- 
+                Set to 'warning' to reduce verbosity
+                Set to 'info' for debugging
+                Set to 'trace' for detailed DDS tracing
+            -->
+            <Verbosity>warning</Verbosity>
+            <LogFile></LogFile>
+        </Tracing>
+    </Domain>
+</CycloneDDS>

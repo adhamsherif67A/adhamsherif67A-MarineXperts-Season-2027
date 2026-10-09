@@ -1,0 +1,131 @@
+[0.012s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[0.059s] [35m[1mConsolidate compiler generated dependencies of target realjoy_node[0m
+[0.078s] [ 50%] [32mBuilding CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o[0m
+[4.693s] In file included from [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:15[m[K:
+[4.693s] [01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:[m[K In member function ‘[01m[Kvoid PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’:
+[4.693s] [01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[4.693s]   110 |     [01;35m[Kconst std::shared_ptr<std_srvs::srv::Trigger::Request> req[m[K,
+[4.693s]       |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[4.693s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K At global scope:
+[4.693s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:18:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[4.693s]   148 |   static int16_t [01;31m[Kaxis_to_mc_[m[K
+[4.693s]       |                  [01;31m[K^~~~~~~~~~~[m[K
+[4.694s]       |                             [32m[K;[m[K
+[4.694s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:29:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+[4.694s]   148 |   static int16_t axis_to_mc_
+[4.694s]       |                             [01;31m[K^[m[K
+[4.694s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:22:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+[4.694s]    22 | [01;36m[K{[m[K
+[4.694s]       | [01;36m[K^[m[K
+[4.694s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In constructor ‘[01m[KRealJoyNode::RealJoyNode()[m[K’:
+[4.694s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:27:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_topic_[m[K’ was not declared in this scope; did you mean ‘[01m[Knode_topics_[m[K’?
+[4.694s]    27 |     [01;31m[Kjoy_topic_[m[K = this->declare_parameter<std::string>("joy_topic", "/joy");
+[4.694s]       |     [01;31m[K^~~~~~~~~~[m[K
+[4.694s]       |     [32m[Knode_topics_[m[K
+[4.694s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:29:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_rate_hz_[m[K’ was not declared in this scope
+[4.694s]    29 |     [01;31m[Kpublish_rate_hz_[m[K = this->declare_parameter<double>("publish_rate_hz", 20.0);
+[4.694s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.694s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:30:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_timeout_s_[m[K’ was not declared in this scope
+[4.694s]    30 |     [01;31m[Kjoy_timeout_s_[m[K   = this->declare_parameter<double>("joy_timeout_s", 0.5);
+[4.694s]       |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_button_index_[m[K’ was not declared in this scope
+[4.695s]    32 |     [01;31m[Karm_button_index_[m[K = this->declare_parameter<int>("arm_button_index", 6);
+[4.695s]       |     [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:33:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_mode_[m[K’ was not declared in this scope
+[4.695s]    33 |     [01;31m[Karm_mode_[m[K = this->declare_parameter<std::string>("arm_mode", "MANUAL");
+[4.695s]       |     [01;31m[K^~~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:35:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kalt_hold_button_index_[m[K’ was not declared in this scope
+[4.695s]    35 |     [01;31m[Kalt_hold_button_index_[m[K = this->declare_parameter<int>("alt_hold_button_index", 3);
+[4.695s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:36:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kalt_hold_mode_[m[K’ was not declared in this scope
+[4.695s]    36 |     [01;31m[Kalt_hold_mode_[m[K         = this->declare_parameter<std::string>("alt_hold_mode", "ALT_HOLD");
+[4.695s]       |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:38:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcfg_[m[K’ was not declared in this scope
+[4.695s]    38 |     [01;31m[Kcfg_[m[K.axis_forward   = this->declare_parameter<int>("axis_forward", 1);
+[4.695s]       |     [01;31m[K^~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:60:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmanual_pub_[m[K’ was not declared in this scope
+[4.695s]    60 |     [01;31m[Kmanual_pub_[m[K = this->create_publisher<mavros_msgs::msg::ManualControl>(
+[4.695s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:63:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_sub_[m[K’ was not declared in this scope
+[4.695s]    63 |     [01;31m[Kjoy_sub_[m[K = this->create_subscription<sensor_msgs::msg::Joy>(
+[4.695s]       |     [01;31m[K^~~~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:65:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kon_joy[m[K’ is not a member of ‘[01m[KRealJoyNode[m[K’
+[4.695s]    65 |       std::bind(&RealJoyNode::[01;31m[Kon_joy[m[K, this, std::placeholders::_1));
+[4.695s]       |                               [01;31m[K^~~~~~[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:67:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_client_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_client_t[m[K’?
+[4.695s]    67 |     [01;31m[Karm_client_[m[K      = this->create_client<mavros_msgs::srv::CommandBool>("/mavros/cmd/arming");
+[4.695s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[4.695s]       |     [32m[Krmw_client_t[m[K
+[4.695s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:68:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kset_mode_client_[m[K’ was not declared in this scope
+[4.696s]    68 |     [01;31m[Kset_mode_client_[m[K = this->create_client<mavros_msgs::srv::SetMode>("/mavros/set_mode");
+[4.696s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.696s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:77:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_[m[K’ was not declared in this scope
+[4.696s]    77 |     [01;31m[Kdepth_[m[K = std::make_unique<PressureToDepthCm>(this, dp);
+[4.696s]       |     [01;31m[K^~~~~~[m[K
+[4.696s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:79:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_zero_button_index_[m[K’ was not declared in this scope
+[4.696s]    79 |     [01;31m[Kdepth_zero_button_index_[m[K = this->declare_parameter<int>("depth_zero_button_index", 0);
+[4.696s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.697s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:80:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_zero_client_[m[K’ was not declared in this scope
+[4.697s]    80 |     [01;31m[Kdepth_zero_client_[m[K = this->create_client<std_srvs::srv::Trigger>("/set_zero_depth");
+[4.697s]       |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[4.697s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:82:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmode_switcher_[m[K’ was not declared in this scope
+[4.697s]    82 |     [01;31m[Kmode_switcher_[m[K = std::make_unique<realjoy::ModeSwitcher>(this, [this](const std::string& mode) {
+[4.697s]       |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.697s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:87:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+[4.697s]    87 |     [01;31m[Ktimer_[m[K = this->create_wall_timer(
+[4.697s]       |     [01;31m[K^~~~~~[m[K
+[4.697s]       |     [32m[Ktimer_t[m[K
+[4.697s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:89:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kon_timer[m[K’ is not a member of ‘[01m[KRealJoyNode[m[K’
+[4.697s]    89 |       std::bind(&RealJoyNode::[01;31m[Kon_timer[m[K, this));
+[4.697s]       |                               [01;31m[K^~~~~~~~[m[K
+[4.697s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:91:5:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_joy_time_[m[K’ was not declared in this scope
+[4.697s]    91 |     [01;31m[Klast_joy_time_[m[K = this->now();
+[4.697s]       |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.697s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::request_mode(const string&)[m[K’:
+[4.698s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:116:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kset_mode_client_[m[K’ was not declared in this scope
+[4.698s]   116 |     if (!wait_service([01;31m[Kset_mode_client_[m[K, "/mavros/set_mode")) return;
+[4.698s]       |                       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.698s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:119:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kset_mode_client_[m[K’ was not declared in this scope
+[4.698s]   119 |     [01;31m[Kset_mode_client_[m[K->async_send_request(req);
+[4.698s]       |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.698s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::request_arm(bool)[m[K’:
+[4.698s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:124:23:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_client_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_client_t[m[K’?
+[4.698s]   124 |     if (!wait_service([01;31m[Karm_client_[m[K, "/mavros/cmd/arming")) return;
+[4.698s]       |                       [01;31m[K^~~~~~~~~~~[m[K
+[4.698s]       |                       [32m[Krmw_client_t[m[K
+[4.698s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:127:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_client_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_client_t[m[K’?
+[4.698s]   127 |     [01;31m[Karm_client_[m[K->async_send_request(req);
+[4.698s]       |     [01;31m[K^~~~~~~~~~~[m[K
+[4.698s]       |     [32m[Krmw_client_t[m[K
+[4.698s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::toggle_arm()[m[K’:
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:132:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdesired_armed_[m[K’ was not declared in this scope
+[4.699s]   132 |     [01;31m[Kdesired_armed_[m[K = !desired_armed_;
+[4.699s]       |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:135:20:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_mode_[m[K’ was not declared in this scope
+[4.699s]   135 |       request_mode([01;31m[Karm_mode_[m[K);
+[4.699s]       |                    [01;31m[K^~~~~~~~~[m[K
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:136:7:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_delay_timer_[m[K’ was not declared in this scope
+[4.699s]   136 |       [01;31m[Karm_delay_timer_[m[K = this->create_wall_timer(
+[4.699s]       |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In lambda function:
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:140:11:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_delay_timer_[m[K’ is not captured
+[4.699s]   140 |           [01;31m[Karm_delay_timer_[m[K->cancel();
+[4.699s]       |           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:138:14:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+[4.699s]   138 |         [this[01;36m[K][m[K() {
+[4.699s]       |              [01;36m[K^[m[K
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:136:7:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>arm_delay_timer_[m[K’ declared here
+[4.699s]   136 |       [01;36m[Karm_delay_timer_[m[K = this->create_wall_timer(
+[4.699s]       |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::toggle_arm()[m[K’:
+[4.699s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:144:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_neutral_manual[m[K’ was not declared in this scope
+[4.699s]   144 |       [01;31m[Kpublish_neutral_manual[m[K();
+[4.700s]       |       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[4.700s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K At global scope:
+[4.700s] [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:29:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+[4.700s]   148 |   static int16_t axis_to_mc_
+[4.700s]       |                             [01;31m[K^[m[K
+[4.700s] gmake[2]: *** [CMakeFiles/realjoy_node.dir/build.make:76: CMakeFiles/realjoy_node.dir/src/joystick.cpp.o] Error 1
+[4.700s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realjoy_node.dir/all] Error 2
+[4.700s] gmake: *** [Makefile:146: all] Error 2
+[4.700s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '2': CMAKE_PREFIX_PATH=/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16

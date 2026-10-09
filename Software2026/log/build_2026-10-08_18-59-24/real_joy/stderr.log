@@ -1,0 +1,5 @@
+In file included from /home/boda/Software2026/src/real_joy/src/joystick.cpp:19:
+/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp: In member function ‘void PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)’:
+/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60: warning: unused parameter ‘req’ [-Wunused-parameter]
+  110 |     const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~

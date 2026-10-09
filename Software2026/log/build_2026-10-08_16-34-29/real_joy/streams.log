@@ -1,0 +1,42 @@
+[0.021s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[0.137s] [ 50%] Building CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o
+[15.754s] In file included from /home/boda/Software2026/src/real_joy/src/joystick.cpp:15:
+[15.754s] /home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp: In member function ‘void PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)’:
+[15.754s] /home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60: warning: unused parameter ‘req’ [-Wunused-parameter]
+[15.754s]   110 |     const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
+[15.754s]       |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+[15.781s] [100%] Linking CXX executable realjoy_node
+[16.605s] [100%] Built target realjoy_node
+[16.621s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[16.635s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --install /home/boda/Software2026/build/real_joy
+[16.645s] -- Install configuration: ""
+[16.645s] -- Installing: /home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node
+[16.655s] -- Set runtime path of "/home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node" to ""
+[16.655s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include
+[16.655s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy
+[16.655s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/keelDepth.hpp
+[16.655s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/manual.hpp
+[16.655s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/rel_alt.hpp
+[16.655s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/modes.hpp
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/launch
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/launch/real_joy.launch.py
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/config
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/config/cyclonedds.xml
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/lib/real_joy/zed_to_mavros_pose.py
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst.py
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/package_run_dependencies/real_joy
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/parent_prefix_path/real_joy
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.sh
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.dsv
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.sh
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.dsv
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.bash
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.sh
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.zsh
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.dsv
+[16.656s] -- Installing: /home/boda/Software2026/install/real_joy/share/real_joy/package.dsv
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/packages/real_joy
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig.cmake
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig-version.cmake
+[16.656s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/package.xml
+[16.658s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --install /home/boda/Software2026/build/real_joy

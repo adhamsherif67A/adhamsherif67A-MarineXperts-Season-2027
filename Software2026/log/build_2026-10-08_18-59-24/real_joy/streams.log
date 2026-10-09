@@ -1,0 +1,49 @@
+[0.010s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[0.056s] Consolidate compiler generated dependencies of target realjoy_node
+[0.069s] [ 50%] Building CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o
+[2.070s] In file included from /home/boda/Software2026/src/real_joy/src/joystick.cpp:19:
+[2.070s] /home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp: In member function ‘void PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)’:
+[2.070s] /home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60: warning: unused parameter ‘req’ [-Wunused-parameter]
+[2.070s]   110 |     const std::shared_ptr<std_srvs::srv::Trigger::Request> req,
+[2.070s]       |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+[13.223s] [100%] Linking CXX executable realjoy_node
+[13.898s] [100%] Built target realjoy_node
+[13.914s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[13.922s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --install /home/boda/Software2026/build/real_joy
+[13.930s] -- Install configuration: ""
+[13.930s] -- Execute custom install script
+[13.930s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node
+[13.930s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/keelDepth.hpp
+[13.930s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/manual.hpp
+[13.931s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/modes.hpp
+[13.931s] -- Symlinking: /home/boda/Software2026/install/real_joy/include/RealJoy/pilot_axes.hpp
+[13.939s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/rel_alt.hpp
+[13.940s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/launch/real_joy.launch.py
+[13.940s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/config/cyclonedds.xml
+[13.940s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/zed_to_mavros_pose.py
+[13.940s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst.py
+[13.940s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__init__.py
+[13.940s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/__init__.cpython-310.pyc
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/app.cpython-310.pyc
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/ros_worker.cpython-310.pyc
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/simulation.cpython-310.pyc
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/app.py
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/ros_worker.py
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/simulation.py
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst_legacy.py
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/package_run_dependencies/real_joy
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/parent_prefix_path/real_joy
+[13.941s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.sh
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.dsv
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.sh
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.dsv
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.bash
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.sh
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.zsh
+[13.942s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.dsv
+[13.942s] -- Symlinking: /home/boda/Software2026/install/real_joy/share/real_joy/package.dsv
+[13.951s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/packages/real_joy
+[13.951s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig.cmake
+[13.951s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig-version.cmake
+[13.952s] -- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/package.xml
+[13.953s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble /usr/bin/cmake --install /home/boda/Software2026/build/real_joy

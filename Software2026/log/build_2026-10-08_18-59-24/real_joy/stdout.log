@@ -1,0 +1,40 @@
+Consolidate compiler generated dependencies of target realjoy_node
+[ 50%] Building CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o
+[100%] Linking CXX executable realjoy_node
+[100%] Built target realjoy_node
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/keelDepth.hpp
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/manual.hpp
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/modes.hpp
+-- Symlinking: /home/boda/Software2026/install/real_joy/include/RealJoy/pilot_axes.hpp
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/rel_alt.hpp
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/launch/real_joy.launch.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/config/cyclonedds.xml
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/zed_to_mavros_pose.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__init__.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/__init__.cpython-310.pyc
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/app.cpython-310.pyc
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/ros_worker.cpython-310.pyc
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/simulation.cpython-310.pyc
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/app.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/ros_worker.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/simulation.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst_legacy.py
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/package_run_dependencies/real_joy
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/parent_prefix_path/real_joy
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.sh
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.dsv
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.bash
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.sh
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.zsh
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.dsv
+-- Symlinking: /home/boda/Software2026/install/real_joy/share/real_joy/package.dsv
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/packages/real_joy
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig.cmake
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig-version.cmake
+-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/package.xml

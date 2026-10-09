@@ -1,0 +1,38 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o[0m
+In file included from [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:15[m[K:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:[m[K In member function ‘[01m[Kvoid PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+  110 |     [01;35m[Kconst std::shared_ptr<std_srvs::srv::Trigger::Request> req[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[100%] [32m[1mLinking CXX executable realjoy_node[0m
+[100%] Built target realjoy_node
+-- Install configuration: ""
+-- Installing: /home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node
+-- Set runtime path of "/home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node" to ""
+-- Up-to-date: /home/boda/Software2026/install/real_joy/include
+-- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy
+-- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/keelDepth.hpp
+-- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/manual.hpp
+-- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/rel_alt.hpp
+-- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/modes.hpp
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/launch
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/launch/real_joy.launch.py
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/config
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/config/cyclonedds.xml
+-- Up-to-date: /home/boda/Software2026/install/real_joy/lib/real_joy/zed_to_mavros_pose.py
+-- Up-to-date: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst.py
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/package_run_dependencies/real_joy
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/parent_prefix_path/real_joy
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.sh
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.sh
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.dsv
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.bash
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.sh
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.zsh
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.dsv
+-- Installing: /home/boda/Software2026/install/real_joy/share/real_joy/package.dsv
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/packages/real_joy
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig.cmake
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig-version.cmake
+-- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/package.xml

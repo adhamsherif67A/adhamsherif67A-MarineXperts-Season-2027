@@ -1,0 +1,127 @@
+In file included from [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:15[m[K:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:[m[K In member function ‘[01m[Kvoid PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+  110 |     [01;35m[Kconst std::shared_ptr<std_srvs::srv::Trigger::Request> req[m[K,
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K At global scope:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:18:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+  148 |   static int16_t [01;31m[Kaxis_to_mc_[m[K
+      |                  [01;31m[K^~~~~~~~~~~[m[K
+      |                             [32m[K;[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:29:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  148 |   static int16_t axis_to_mc_
+      |                             [01;31m[K^[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:22:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   22 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In constructor ‘[01m[KRealJoyNode::RealJoyNode()[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:27:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_topic_[m[K’ was not declared in this scope; did you mean ‘[01m[Knode_topics_[m[K’?
+   27 |     [01;31m[Kjoy_topic_[m[K = this->declare_parameter<std::string>("joy_topic", "/joy");
+      |     [01;31m[K^~~~~~~~~~[m[K
+      |     [32m[Knode_topics_[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:29:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_rate_hz_[m[K’ was not declared in this scope
+   29 |     [01;31m[Kpublish_rate_hz_[m[K = this->declare_parameter<double>("publish_rate_hz", 20.0);
+      |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:30:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_timeout_s_[m[K’ was not declared in this scope
+   30 |     [01;31m[Kjoy_timeout_s_[m[K   = this->declare_parameter<double>("joy_timeout_s", 0.5);
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_button_index_[m[K’ was not declared in this scope
+   32 |     [01;31m[Karm_button_index_[m[K = this->declare_parameter<int>("arm_button_index", 6);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:33:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_mode_[m[K’ was not declared in this scope
+   33 |     [01;31m[Karm_mode_[m[K = this->declare_parameter<std::string>("arm_mode", "MANUAL");
+      |     [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:35:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kalt_hold_button_index_[m[K’ was not declared in this scope
+   35 |     [01;31m[Kalt_hold_button_index_[m[K = this->declare_parameter<int>("alt_hold_button_index", 3);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:36:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kalt_hold_mode_[m[K’ was not declared in this scope
+   36 |     [01;31m[Kalt_hold_mode_[m[K         = this->declare_parameter<std::string>("alt_hold_mode", "ALT_HOLD");
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:38:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kcfg_[m[K’ was not declared in this scope
+   38 |     [01;31m[Kcfg_[m[K.axis_forward   = this->declare_parameter<int>("axis_forward", 1);
+      |     [01;31m[K^~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:60:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmanual_pub_[m[K’ was not declared in this scope
+   60 |     [01;31m[Kmanual_pub_[m[K = this->create_publisher<mavros_msgs::msg::ManualControl>(
+      |     [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:63:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoy_sub_[m[K’ was not declared in this scope
+   63 |     [01;31m[Kjoy_sub_[m[K = this->create_subscription<sensor_msgs::msg::Joy>(
+      |     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:65:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kon_joy[m[K’ is not a member of ‘[01m[KRealJoyNode[m[K’
+   65 |       std::bind(&RealJoyNode::[01;31m[Kon_joy[m[K, this, std::placeholders::_1));
+      |                               [01;31m[K^~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:67:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_client_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_client_t[m[K’?
+   67 |     [01;31m[Karm_client_[m[K      = this->create_client<mavros_msgs::srv::CommandBool>("/mavros/cmd/arming");
+      |     [01;31m[K^~~~~~~~~~~[m[K
+      |     [32m[Krmw_client_t[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:68:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kset_mode_client_[m[K’ was not declared in this scope
+   68 |     [01;31m[Kset_mode_client_[m[K = this->create_client<mavros_msgs::srv::SetMode>("/mavros/set_mode");
+      |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:77:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_[m[K’ was not declared in this scope
+   77 |     [01;31m[Kdepth_[m[K = std::make_unique<PressureToDepthCm>(this, dp);
+      |     [01;31m[K^~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:79:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_zero_button_index_[m[K’ was not declared in this scope
+   79 |     [01;31m[Kdepth_zero_button_index_[m[K = this->declare_parameter<int>("depth_zero_button_index", 0);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:80:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdepth_zero_client_[m[K’ was not declared in this scope
+   80 |     [01;31m[Kdepth_zero_client_[m[K = this->create_client<std_srvs::srv::Trigger>("/set_zero_depth");
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:82:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kmode_switcher_[m[K’ was not declared in this scope
+   82 |     [01;31m[Kmode_switcher_[m[K = std::make_unique<realjoy::ModeSwitcher>(this, [this](const std::string& mode) {
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:87:5:[m[K [01;31m[Kerror: [m[K‘[01m[Ktimer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktimer_t[m[K’?
+   87 |     [01;31m[Ktimer_[m[K = this->create_wall_timer(
+      |     [01;31m[K^~~~~~[m[K
+      |     [32m[Ktimer_t[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:89:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kon_timer[m[K’ is not a member of ‘[01m[KRealJoyNode[m[K’
+   89 |       std::bind(&RealJoyNode::[01;31m[Kon_timer[m[K, this));
+      |                               [01;31m[K^~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:91:5:[m[K [01;31m[Kerror: [m[K‘[01m[Klast_joy_time_[m[K’ was not declared in this scope
+   91 |     [01;31m[Klast_joy_time_[m[K = this->now();
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::request_mode(const string&)[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:116:23:[m[K [01;31m[Kerror: [m[K‘[01m[Kset_mode_client_[m[K’ was not declared in this scope
+  116 |     if (!wait_service([01;31m[Kset_mode_client_[m[K, "/mavros/set_mode")) return;
+      |                       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:119:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kset_mode_client_[m[K’ was not declared in this scope
+  119 |     [01;31m[Kset_mode_client_[m[K->async_send_request(req);
+      |     [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::request_arm(bool)[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:124:23:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_client_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_client_t[m[K’?
+  124 |     if (!wait_service([01;31m[Karm_client_[m[K, "/mavros/cmd/arming")) return;
+      |                       [01;31m[K^~~~~~~~~~~[m[K
+      |                       [32m[Krmw_client_t[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:127:5:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_client_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_client_t[m[K’?
+  127 |     [01;31m[Karm_client_[m[K->async_send_request(req);
+      |     [01;31m[K^~~~~~~~~~~[m[K
+      |     [32m[Krmw_client_t[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::toggle_arm()[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:132:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdesired_armed_[m[K’ was not declared in this scope
+  132 |     [01;31m[Kdesired_armed_[m[K = !desired_armed_;
+      |     [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:135:20:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_mode_[m[K’ was not declared in this scope
+  135 |       request_mode([01;31m[Karm_mode_[m[K);
+      |                    [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:136:7:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_delay_timer_[m[K’ was not declared in this scope
+  136 |       [01;31m[Karm_delay_timer_[m[K = this->create_wall_timer(
+      |       [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In lambda function:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:140:11:[m[K [01;31m[Kerror: [m[K‘[01m[Karm_delay_timer_[m[K’ is not captured
+  140 |           [01;31m[Karm_delay_timer_[m[K->cancel();
+      |           [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:138:14:[m[K [01;36m[Knote: [m[Kthe lambda has no capture-default
+  138 |         [this[01;36m[K][m[K() {
+      |              [01;36m[K^[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:136:7:[m[K [01;36m[Knote: [m[K‘[01m[K<typeprefixerror>arm_delay_timer_[m[K’ declared here
+  136 |       [01;36m[Karm_delay_timer_[m[K = this->create_wall_timer(
+      |       [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K In member function ‘[01m[Kvoid RealJoyNode::toggle_arm()[m[K’:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:144:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublish_neutral_manual[m[K’ was not declared in this scope
+  144 |       [01;31m[Kpublish_neutral_manual[m[K();
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:[m[K At global scope:
+[01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:148:29:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+  148 |   static int16_t axis_to_mc_
+      |                             [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/realjoy_node.dir/build.make:76: CMakeFiles/realjoy_node.dir/src/joystick.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/realjoy_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

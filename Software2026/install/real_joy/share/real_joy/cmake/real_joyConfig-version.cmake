@@ -1,0 +1,1 @@
+/home/boda/Software2026/build/real_joy/ament_cmake_core/real_joyConfig-version.cmake

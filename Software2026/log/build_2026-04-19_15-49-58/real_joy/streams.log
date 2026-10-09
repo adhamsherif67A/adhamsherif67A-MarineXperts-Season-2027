@@ -1,0 +1,43 @@
+[0.011s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[0.057s] [35m[1mConsolidate compiler generated dependencies of target realjoy_node[0m
+[0.074s] [ 50%] [32mBuilding CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o[0m
+[13.812s] In file included from [01m[K/home/boda/Software2026/src/real_joy/src/joystick.cpp:15[m[K:
+[13.812s] [01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:[m[K In member function ‘[01m[Kvoid PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)[m[K’:
+[13.812s] [01m[K/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kreq[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[13.812s]   110 |     [01;35m[Kconst std::shared_ptr<std_srvs::srv::Trigger::Request> req[m[K,
+[13.812s]       |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[14.242s] [100%] [32m[1mLinking CXX executable realjoy_node[0m
+[14.710s] [100%] Built target realjoy_node
+[14.722s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '0': CMAKE_PREFIX_PATH=/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras /usr/bin/cmake --build /home/boda/Software2026/build/real_joy -- -j16 -l16
+[14.733s] Invoking command in '/home/boda/Software2026/build/real_joy': CMAKE_PREFIX_PATH=/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras /usr/bin/cmake --install /home/boda/Software2026/build/real_joy
+[14.739s] -- Install configuration: ""
+[14.739s] -- Installing: /home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node
+[14.746s] -- Set runtime path of "/home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node" to ""
+[14.746s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include
+[14.746s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy
+[14.746s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/keelDepth.hpp
+[14.746s] -- Installing: /home/boda/Software2026/install/real_joy/include/RealJoy/manual.hpp
+[14.746s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/rel_alt.hpp
+[14.746s] -- Up-to-date: /home/boda/Software2026/install/real_joy/include/RealJoy/modes.hpp
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/launch
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/launch/real_joy.launch.py
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/config
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/config/cyclonedds.xml
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/lib/real_joy/zed_to_mavros_pose.py
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst.py
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/package_run_dependencies/real_joy
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/parent_prefix_path/real_joy
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.sh
+[14.747s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.dsv
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.sh
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.dsv
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.bash
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.sh
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.zsh
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.dsv
+[14.748s] -- Installing: /home/boda/Software2026/install/real_joy/share/real_joy/package.dsv
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/packages/real_joy
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig.cmake
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig-version.cmake
+[14.748s] -- Up-to-date: /home/boda/Software2026/install/real_joy/share/real_joy/package.xml
+[14.749s] Invoked command in '/home/boda/Software2026/build/real_joy' returned '0': CMAKE_PREFIX_PATH=/home/boda/Software2026/install/real_joy:/home/boda/install/mako_vision_pipeline:/home/boda/install/mako_vision:/home/boda/install/gs_ros:/home/boda/install/crab_detector:/home/boda/mako_ws/install/mako_vision:/opt/ros/humble:/home/boda/install/water_physics_plugin:/home/boda/install/rov:/home/boda/install/robot_description:/home/boda/install/robot_cameras:/home/boda/install/mavros_extras:/home/boda/install/mavros:/home/boda/install/libmavconn:/home/boda/install/gs_ros_interfaces:/home/boda/install/gs_ros2_control_demos:/home/boda/install/control_msgs:/home/boda/install/ardupilot_msgs:/home/boda/install/RealJoy:/home/boda/mako_ws/install/water_physics_plugin:/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/robot_control:/home/boda/mako_ws/install/robot_cameras /usr/bin/cmake --install /home/boda/Software2026/build/real_joy

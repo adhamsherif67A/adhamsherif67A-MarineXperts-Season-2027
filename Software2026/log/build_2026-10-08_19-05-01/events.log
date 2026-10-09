@@ -1,0 +1,185 @@
+[0.000000] (-) TimerEvent: {}
+[0.000123] (real_joy) JobQueued: {'identifier': 'real_joy', 'dependencies': OrderedDict()}
+[0.000160] (real_joy) JobStarted: {'identifier': 'real_joy'}
+[0.006772] (real_joy) JobProgress: {'identifier': 'real_joy', 'progress': 'cmake'}
+[0.007502] (real_joy) JobProgress: {'identifier': 'real_joy', 'progress': 'build'}
+[0.008044] (real_joy) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/boda/Software2026/build/real_joy', '--', '-j16', '-l16'], 'cwd': '/home/boda/Software2026/build/real_joy', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', '/home/boda/ardupilot/ardupilot_gazebo/build'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/boda/mako_ws'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('GZ_SIM_RESOURCE_PATH', '/home/boda/ardupilot/ardupilot_gazebo/models:/home/boda/ardupilot/ardupilot_gazebo/worlds:/home/boda/mako_ws/install/robot_description/share'), ('LANGUAGE', 'en_US:en'), ('USER', 'boda'), ('LC_TIME', 'en_US.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('DEBUG', 'release'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/boda/mako_ws/install/robot_description/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/boda'), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/boda'), ('CCACHE_DISABLE', '1'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-294d714e-1.13-main.sock'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_MONETARY', 'en_US.UTF-8'), ('MANAGERPID', '1426'), ('LC_CTYPE', 'C.UTF-8'), ('SYSTEMD_EXEC_PID', '2013'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3365'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu-xorg.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/boda/mako_ws/install:/home/boda/Software2026/install'), ('CODEX_PERMISSION_PROFILE', ':workspace'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'boda'), ('JOURNAL_STREAM', '8:20557'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu-xorg.default.path'), ('RUST_LOG', 'warn'), ('USERNAME', 'boda'), ('TERM', 'dumb'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/lib/ccache:/home/boda/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/boda/.local/bin:/home/boda/.codex/tmp/arg0/codex-arg0vs7Wln:/opt/ros/humble/bin:/usr/lib/ccache:/home/boda/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/boda/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/boda/.vscode/extensions/openai.chatgpt-26.1002.51308-linux-x64/bin/linux-x86_64'), ('SESSION_MANAGER', 'local/boda-IdeaPad-Gaming-3-15ARH7:@/tmp/.ICE-unix/1815,unix/boda-IdeaPad-Gaming-3-15ARH7:/tmp/.ICE-unix/1815'), ('CODEX_VERSION', '0.162.0-alpha.2'), ('CODEX_SESSION_ID', '01a11678-77e7-7b63-8762-0987e66579ff'), ('INVOCATION_ID', '9dc24aa9a53e4dd5ab2739720a3428f4'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/mavros_autotune:/home/boda/mako_ws/install/bluerov2_gz:/home/boda/Software2026/install/real_joy:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a7c74762-400b-4132-8f6b-4a4771e66a44'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '01a11678-77e7-7b63-8762-0987e66579ff'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/boda/Software2026/build/real_joy'), ('VSCODE_CLI', '1'), ('LC_ALL', 'C.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/boda/.config/Code/CachedData/110a328ea54b42367b803ec53ee0bf52ef26b419'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/boda/mako_ws/build/mavros_autotune:/home/boda/mako_ws/install/mavros_autotune/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ELECTRON_NO_ATTACH_CONSOLE', '1'), ('CMAKE_PREFIX_PATH', '/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/bluerov2_gz:/home/boda/Software2026/install/real_joy:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble'), ('VSCODE_PID', '5718')]), 'shell': False}
+[0.050297] (real_joy) StdoutLine: {'line': b'Consolidate compiler generated dependencies of target realjoy_node\n'}
+[0.063485] (real_joy) StdoutLine: {'line': b'[ 50%] Building CXX object CMakeFiles/realjoy_node.dir/src/joystick.cpp.o\n'}
+[0.099331] (-) TimerEvent: {}
+[0.199550] (-) TimerEvent: {}
+[0.299778] (-) TimerEvent: {}
+[0.400019] (-) TimerEvent: {}
+[0.500258] (-) TimerEvent: {}
+[0.600489] (-) TimerEvent: {}
+[0.700728] (-) TimerEvent: {}
+[0.800980] (-) TimerEvent: {}
+[0.901222] (-) TimerEvent: {}
+[1.001437] (-) TimerEvent: {}
+[1.101654] (-) TimerEvent: {}
+[1.201885] (-) TimerEvent: {}
+[1.302105] (-) TimerEvent: {}
+[1.402315] (-) TimerEvent: {}
+[1.502524] (-) TimerEvent: {}
+[1.602735] (-) TimerEvent: {}
+[1.702937] (-) TimerEvent: {}
+[1.803150] (-) TimerEvent: {}
+[1.900967] (real_joy) StderrLine: {'line': b'In file included from /home/boda/Software2026/src/real_joy/src/joystick.cpp:19:\n'}
+[1.901201] (real_joy) StderrLine: {'line': b'/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp: In member function \xe2\x80\x98void PressureToDepthCm::onSetZeroDepth(std::shared_ptr<std_srvs::srv::Trigger_Request_<std::allocator<void> > >, std::shared_ptr<std_srvs::srv::Trigger_Response_<std::allocator<void> > >)\xe2\x80\x99:\n'}
+[1.901311] (real_joy) StderrLine: {'line': b'/home/boda/Software2026/src/real_joy/include/RealJoy/keelDepth.hpp:110:60: warning: unused parameter \xe2\x80\x98req\xe2\x80\x99 [-Wunused-parameter]\n'}
+[1.901394] (real_joy) StderrLine: {'line': b'  110 |     const std::shared_ptr<std_srvs::srv::Trigger::Request> req,\n'}
+[1.901468] (real_joy) StderrLine: {'line': b'      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\n'}
+[1.903220] (-) TimerEvent: {}
+[2.003379] (-) TimerEvent: {}
+[2.103593] (-) TimerEvent: {}
+[2.203818] (-) TimerEvent: {}
+[2.304086] (-) TimerEvent: {}
+[2.404299] (-) TimerEvent: {}
+[2.504512] (-) TimerEvent: {}
+[2.604727] (-) TimerEvent: {}
+[2.704893] (-) TimerEvent: {}
+[2.805104] (-) TimerEvent: {}
+[2.905319] (-) TimerEvent: {}
+[3.005502] (-) TimerEvent: {}
+[3.105713] (-) TimerEvent: {}
+[3.205890] (-) TimerEvent: {}
+[3.306100] (-) TimerEvent: {}
+[3.406314] (-) TimerEvent: {}
+[3.506528] (-) TimerEvent: {}
+[3.606739] (-) TimerEvent: {}
+[3.706966] (-) TimerEvent: {}
+[3.807179] (-) TimerEvent: {}
+[3.907362] (-) TimerEvent: {}
+[4.007571] (-) TimerEvent: {}
+[4.107782] (-) TimerEvent: {}
+[4.208010] (-) TimerEvent: {}
+[4.308224] (-) TimerEvent: {}
+[4.408403] (-) TimerEvent: {}
+[4.508601] (-) TimerEvent: {}
+[4.608826] (-) TimerEvent: {}
+[4.709049] (-) TimerEvent: {}
+[4.809273] (-) TimerEvent: {}
+[4.909488] (-) TimerEvent: {}
+[5.010077] (-) TimerEvent: {}
+[5.110289] (-) TimerEvent: {}
+[5.210501] (-) TimerEvent: {}
+[5.310715] (-) TimerEvent: {}
+[5.410954] (-) TimerEvent: {}
+[5.511156] (-) TimerEvent: {}
+[5.611361] (-) TimerEvent: {}
+[5.711571] (-) TimerEvent: {}
+[5.811785] (-) TimerEvent: {}
+[5.912017] (-) TimerEvent: {}
+[6.012210] (-) TimerEvent: {}
+[6.112426] (-) TimerEvent: {}
+[6.212632] (-) TimerEvent: {}
+[6.312861] (-) TimerEvent: {}
+[6.413075] (-) TimerEvent: {}
+[6.513293] (-) TimerEvent: {}
+[6.613506] (-) TimerEvent: {}
+[6.713725] (-) TimerEvent: {}
+[6.813960] (-) TimerEvent: {}
+[6.914175] (-) TimerEvent: {}
+[7.014383] (-) TimerEvent: {}
+[7.114594] (-) TimerEvent: {}
+[7.214845] (-) TimerEvent: {}
+[7.315077] (-) TimerEvent: {}
+[7.415287] (-) TimerEvent: {}
+[7.515495] (-) TimerEvent: {}
+[7.615703] (-) TimerEvent: {}
+[7.715887] (-) TimerEvent: {}
+[7.816101] (-) TimerEvent: {}
+[7.916360] (-) TimerEvent: {}
+[8.016569] (-) TimerEvent: {}
+[8.116780] (-) TimerEvent: {}
+[8.216992] (-) TimerEvent: {}
+[8.317186] (-) TimerEvent: {}
+[8.417396] (-) TimerEvent: {}
+[8.517605] (-) TimerEvent: {}
+[8.617826] (-) TimerEvent: {}
+[8.718040] (-) TimerEvent: {}
+[8.818249] (-) TimerEvent: {}
+[8.918435] (-) TimerEvent: {}
+[9.018637] (-) TimerEvent: {}
+[9.118856] (-) TimerEvent: {}
+[9.219072] (-) TimerEvent: {}
+[9.319559] (-) TimerEvent: {}
+[9.419742] (-) TimerEvent: {}
+[9.519944] (-) TimerEvent: {}
+[9.620131] (-) TimerEvent: {}
+[9.720548] (-) TimerEvent: {}
+[9.820822] (-) TimerEvent: {}
+[9.921036] (-) TimerEvent: {}
+[10.021544] (-) TimerEvent: {}
+[10.121767] (-) TimerEvent: {}
+[10.221986] (-) TimerEvent: {}
+[10.322519] (-) TimerEvent: {}
+[10.422815] (-) TimerEvent: {}
+[10.523024] (-) TimerEvent: {}
+[10.623251] (-) TimerEvent: {}
+[10.723679] (-) TimerEvent: {}
+[10.824213] (-) TimerEvent: {}
+[10.924422] (-) TimerEvent: {}
+[11.024638] (-) TimerEvent: {}
+[11.124875] (-) TimerEvent: {}
+[11.225084] (-) TimerEvent: {}
+[11.325301] (-) TimerEvent: {}
+[11.425525] (-) TimerEvent: {}
+[11.525743] (-) TimerEvent: {}
+[11.625985] (-) TimerEvent: {}
+[11.726209] (-) TimerEvent: {}
+[11.826445] (-) TimerEvent: {}
+[11.926729] (-) TimerEvent: {}
+[12.027026] (-) TimerEvent: {}
+[12.127254] (-) TimerEvent: {}
+[12.227483] (-) TimerEvent: {}
+[12.243507] (real_joy) StdoutLine: {'line': b'[100%] Linking CXX executable realjoy_node\n'}
+[12.327619] (-) TimerEvent: {}
+[12.427837] (-) TimerEvent: {}
+[12.528076] (-) TimerEvent: {}
+[12.628297] (-) TimerEvent: {}
+[12.728518] (-) TimerEvent: {}
+[12.828741] (-) TimerEvent: {}
+[12.853373] (real_joy) StdoutLine: {'line': b'[100%] Built target realjoy_node\n'}
+[12.868262] (real_joy) CommandEnded: {'returncode': 0}
+[12.869344] (real_joy) JobProgress: {'identifier': 'real_joy', 'progress': 'install'}
+[12.875678] (real_joy) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/boda/Software2026/build/real_joy'], 'cwd': '/home/boda/Software2026/build/real_joy', 'env': OrderedDict([('GZ_SIM_SYSTEM_PLUGIN_PATH', '/home/boda/ardupilot/ardupilot_gazebo/build'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('VSCODE_CWD', '/home/boda/mako_ws'), ('VSCODE_ESM_ENTRYPOINT', 'vs/workbench/api/node/extensionHostProcess'), ('CODEX_CI', '1'), ('GZ_SIM_RESOURCE_PATH', '/home/boda/ardupilot/ardupilot_gazebo/models:/home/boda/ardupilot/ardupilot_gazebo/worlds:/home/boda/mako_ws/install/robot_description/share'), ('LANGUAGE', 'en_US:en'), ('USER', 'boda'), ('LC_TIME', 'en_US.UTF-8'), ('CODEX_INTERNAL_ORIGINATOR_OVERRIDE', 'codex_vscode'), ('VSCODE_NLS_CONFIG', '{"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}'), ('VSCODE_HANDLES_UNCAUGHT_ERRORS', 'true'), ('XDG_SESSION_TYPE', 'x11'), ('DEBUG', 'release'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/boda/mako_ws/install/robot_description/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/boda'), ('CHROME_DESKTOP', 'code.desktop'), ('OLDPWD', '/home/boda'), ('CCACHE_DISABLE', '1'), ('DESKTOP_SESSION', 'ubuntu-xorg'), ('VSCODE_IPC_HOOK', '/run/user/1000/vscode-294d714e-1.13-main.sock'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_MONETARY', 'en_US.UTF-8'), ('MANAGERPID', '1426'), ('LC_CTYPE', 'C.UTF-8'), ('SYSTEMD_EXEC_PID', '2013'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', ''), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3365'), ('VSCODE_CRASH_REPORTER_PROCESS_TYPE', 'extensionHost'), ('MANDATORY_PATH', '/usr/share/gconf/ubuntu-xorg.mandatory.path'), ('COLCON_PREFIX_PATH', '/home/boda/mako_ws/install:/home/boda/Software2026/install'), ('CODEX_PERMISSION_PROFILE', ':workspace'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'boda'), ('JOURNAL_STREAM', '8:20557'), ('_', '/usr/bin/colcon'), ('XDG_SESSION_CLASS', 'user'), ('DEFAULTS_PATH', '/usr/share/gconf/ubuntu-xorg.default.path'), ('RUST_LOG', 'warn'), ('USERNAME', 'boda'), ('TERM', 'dumb'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('FC_FONTATIONS', '1'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/usr/lib/ccache:/home/boda/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/boda/.local/bin:/home/boda/.codex/tmp/arg0/codex-arg0vs7Wln:/opt/ros/humble/bin:/usr/lib/ccache:/home/boda/ardupilot/Tools/autotest:/opt/gcc-arm-none-eabi-10-2020-q4-major/bin:/home/boda/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/boda/.vscode/extensions/openai.chatgpt-26.1002.51308-linux-x64/bin/linux-x86_64'), ('SESSION_MANAGER', 'local/boda-IdeaPad-Gaming-3-15ARH7:@/tmp/.ICE-unix/1815,unix/boda-IdeaPad-Gaming-3-15ARH7:/tmp/.ICE-unix/1815'), ('CODEX_VERSION', '0.162.0-alpha.2'), ('CODEX_SESSION_ID', '01a11678-77e7-7b63-8762-0987e66579ff'), ('INVOCATION_ID', '9dc24aa9a53e4dd5ab2739720a3428f4'), ('PAPERSIZE', 'letter'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'en_US.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'C.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('LC_TELEPHONE', 'en_US.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu-xorg'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/mavros_autotune:/home/boda/mako_ws/install/bluerov2_gz:/home/boda/Software2026/install/real_joy:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LC_NAME', 'en_US.UTF-8'), ('TERMINATOR_UUID', 'urn:uuid:a7c74762-400b-4132-8f6b-4a4771e66a44'), ('QT_ACCESSIBILITY', '1'), ('ELECTRON_RUN_AS_NODE', '1'), ('GDMSESSION', 'ubuntu-xorg'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '01a11678-77e7-7b63-8762-0987e66579ff'), ('LC_MEASUREMENT', 'en_US.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('LC_IDENTIFICATION', 'en_US.UTF-8'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/boda/Software2026/build/real_joy'), ('VSCODE_CLI', '1'), ('LC_ALL', 'C.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu-xorg:/etc/xdg'), ('VSCODE_CODE_CACHE_PATH', '/home/boda/.config/Code/CachedData/110a328ea54b42367b803ec53ee0bf52ef26b419'), ('XDG_DATA_DIRS', '/usr/share/ubuntu-xorg:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/boda/mako_ws/build/mavros_autotune:/home/boda/mako_ws/install/mavros_autotune/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'en_US.UTF-8'), ('LC_PAPER', 'en_US.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('ELECTRON_NO_ATTACH_CONSOLE', '1'), ('CMAKE_PREFIX_PATH', '/home/boda/mako_ws/install/robot_description:/home/boda/mako_ws/install/bluerov2_gz:/home/boda/Software2026/install/real_joy:/home/boda/mako_ws/install/mavros_autotune:/opt/ros/humble'), ('VSCODE_PID', '5718')]), 'shell': False}
+[12.881990] (real_joy) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.882323] (real_joy) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[12.882555] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/realjoy_node\n'}
+[12.882824] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/keelDepth.hpp\n'}
+[12.882952] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/manual.hpp\n'}
+[12.883000] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/modes.hpp\n'}
+[12.883101] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/pilot_axes.hpp\n'}
+[12.883141] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/include/RealJoy/rel_alt.hpp\n'}
+[12.883220] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/launch/real_joy.launch.py\n'}
+[12.883348] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/config/cyclonedds.xml\n'}
+[12.883441] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/zed_to_mavros_pose.py\n'}
+[12.883529] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst.py\n'}
+[12.883799] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__init__.py\n'}
+[12.883899] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/__init__.cpython-310.pyc\n'}
+[12.884047] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/app.cpython-310.pyc\n'}
+[12.884112] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/ros_worker.cpython-310.pyc\n'}
+[12.884171] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/__pycache__/simulation.cpython-310.pyc\n'}
+[12.884228] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/app.py\n'}
+[12.884263] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/ros_worker.py\n'}
+[12.884330] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/mako_station/simulation.py\n'}
+[12.884389] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/lib/real_joy/rov_gui_gst_legacy.py\n'}
+[12.884494] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/package_run_dependencies/real_joy\n'}
+[12.884595] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/parent_prefix_path/real_joy\n'}
+[12.884699] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.sh\n'}
+[12.884792] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/ament_prefix_path.dsv\n'}
+[12.885018] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.sh\n'}
+[12.885053] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/environment/path.dsv\n'}
+[12.885117] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.bash\n'}
+[12.885181] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.sh\n'}
+[12.885256] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.zsh\n'}
+[12.885342] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/local_setup.dsv\n'}
+[12.885406] (real_joy) StdoutLine: {'line': b'-- Symlinking: /home/boda/Software2026/install/real_joy/share/real_joy/package.dsv\n'}
+[12.894605] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/ament_index/resource_index/packages/real_joy\n'}
+[12.894786] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig.cmake\n'}
+[12.894913] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/cmake/real_joyConfig-version.cmake\n'}
+[12.895010] (real_joy) StdoutLine: {'line': b'-- Up-to-date symlink: /home/boda/Software2026/install/real_joy/share/real_joy/package.xml\n'}
+[12.896566] (real_joy) CommandEnded: {'returncode': 0}
+[12.907520] (real_joy) JobEnded: {'identifier': 'real_joy', 'rc': 0}
+[12.908004] (-) EventReactorShutdown: {}
