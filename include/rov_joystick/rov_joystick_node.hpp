@@ -1,0 +1,38 @@
+#ifndef ROV_JOYSTICK_NODE_HPP
+#define ROV_JOYSTICK_NODE_HPP
+
+#include <rclcpp/rclcpp.hpp>
+#include <sensor_msgs/msg/joy.hpp>
+#include <geometry_msgs/msg/twist.hpp>
+#include <mavros_msgs/srv/command_bool.hpp>
+#include <mavros_msgs/srv/set_mode.hpp>
+
+class RovJoystickNode : public rclcpp::Node {
+public:
+    RovJoystickNode();
+
+private:
+    void joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg);
+    void send_arming_command(bool arm_vehicle);
+    void send_mode_command(const std::string& target_mode);
+
+    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr sub_joy_;
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_vel_;
+    rclcpp::Client<mavros_msgs::srv::CommandBool>::SharedPtr client_arm_;
+    rclcpp::Client<mavros_msgs::srv::SetMode>::SharedPtr client_mode_;
+
+    bool vehicle_armed_;
+    std::string active_flight_mode_;
+    
+    static constexpr int AXIS_SURGE = 1;
+    static constexpr int AXIS_SWAY = 0;
+    static constexpr int AXIS_HEAVE = 4;
+    static constexpr int AXIS_YAW = 3;
+    
+    static constexpr int BTN_ARM = 0;
+    static constexpr int BTN_DISARM = 1;
+    static constexpr int BTN_STABILIZE = 2;
+    static constexpr int BTN_DEPTH_HOLD = 3;
+};
+
+#endif
