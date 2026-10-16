@@ -6,14 +6,20 @@ import sys
 import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from PyQt5.QtCore import Qt,QTimer,pyqtSignal,QRectF,QProcess,QLockFile,QStandardPaths,QProcessEnvironment,QSettings
+from PyQt5.QtCore import Qt,QTimer,pyqtSignal,QRectF,QProcess,QLockFile,QStandardPaths,QProcessEnvironment,QSettings,QEvent
 from PyQt5.QtGui import QColor,QFont,QImage,QPainter,QPixmap,QIcon
 from PyQt5.QtWidgets import (QApplication,QMainWindow,QWidget,QVBoxLayout,QHBoxLayout,
     QLabel,QPushButton,QComboBox,QFrame,QGridLayout,QProgressBar,QPlainTextEdit,
     QSizePolicy,QMessageBox,QShortcut,QFileDialog)
 from .simulation import WORKSPACE,DOMAIN,SessionThread
-from .ros_worker import RosWorker
+from .ros_worker import RosWorker,NEUTRAL
 
+# Keyboard piloting: key -> (axis, direction); axes are forward, lateral, vertical, yaw.
+KEY_AXES={Qt.Key_W:(0,1),Qt.Key_S:(0,-1),Qt.Key_D:(1,1),Qt.Key_A:(1,-1),
+          Qt.Key_Up:(2,1),Qt.Key_Down:(2,-1),Qt.Key_E:(3,1),Qt.Key_Q:(3,-1),
+          Qt.Key_Right:(3,1),Qt.Key_Left:(3,-1)}
+KEY_HINT='Keyboard: W/S forward · A/D sideways · Q/E or ←/→ turn · ↑/↓ up/down · hold Shift for full power'
+TASK_HINT='Arm in front of the transect, facing along it. Moving a stick or key takes over.'
 NAVY='#071321';PANEL='#0e2134';BORDER='#243b51';GOLD='#d6ae79';SILVER='#e6edf4';MUTED='#94a8ba'
 STYLE=f'''
 QWidget {{ background:{NAVY}; color:{SILVER}; font-family:'DejaVu Sans'; font-size:13px; }}
@@ -181,14 +187,27 @@ class PilotWindow(QMainWindow):
         video_column.addLayout(views)
         self.canvas=PilotCanvas();video_column.addWidget(self.canvas,1)
         tools=QHBoxLayout();self.view_description=label('ZED left eye · bottom view always visible','caption');tools.addWidget(self.view_description);tools.addStretch()
+        self.keyboard_button=QPushButton('Keyboard pilot');self.keyboard_button.setCheckable(True)
+        self.keyboard_button.setFocusPolicy(Qt.NoFocus);self.keyboard_button.setToolTip(KEY_HINT)
+        self.keyboard_button.toggled.connect(self.toggle_keyboard);tools.addWidget(self.keyboard_button)
+        self.keys=set();QApplication.instance().installEventFilter(self)
         capture=QPushButton('Capture frame');capture.clicked.connect(self.capture);tools.addWidget(capture)
         self.record_button=QPushButton('Record session');self.record_button.clicked.connect(self.toggle_recording);tools.addWidget(self.record_button)
         video_column.addLayout(tools)
+        tasks=QHBoxLayout();tasks.addWidget(label('AUTONOMOUS TASKS','caption'))
+        self.task_button=QPushButton('Task 1 · Transect');self.task_button.setObjectName('primary')
+        self.task_button.setToolTip('Follow the blue corridor with the bottom camera and stop at the end marker.')
+        self.task_button.clicked.connect(lambda:self.ros.start_task('Task 1'));tasks.addWidget(self.task_button)
+        self.abort_button=QPushButton('Abort task');self.abort_button.setObjectName('danger');self.abort_button.clicked.connect(self.ros.abort_task)
+        tasks.addWidget(self.abort_button)
+        self.task_status=label(TASK_HINT,'caption');self.task_status.setWordWrap(True);tasks.addWidget(self.task_status,1)
+        video_column.addLayout(tasks)
         self.log_box=QPlainTextEdit();self.log_box.setReadOnly(True);self.log_box.setMaximumBlockCount(120);self.log_box.setFixedHeight(78);video_column.addWidget(self.log_box)
         body.addLayout(video_column,1);root.addLayout(body,1)
         footer=QHBoxLayout();footer.addWidget(label('MARINEXPERTS  /  NAVY · SILVER · GOLD','caption'));footer.addStretch()
-        footer.addWidget(label('V  change view     C  capture     R  record','caption'));root.addLayout(footer)
+        footer.addWidget(label('V  change view     C  capture     R  record     Esc  abort task','caption'));root.addLayout(footer)
         QShortcut('V',self,activated=self.cycle_view);QShortcut('C',self,activated=self.capture);QShortcut('R',self,activated=self.toggle_recording)
+        QShortcut('Esc',self,activated=self.ros.abort_task)
         self.refresh=QTimer(self);self.refresh.timeout.connect(self.tick);self.refresh.start(33)
         self.on_phase('Stopped')
         if start_workers:self.manager.start();self.ros.start()
@@ -263,6 +282,7 @@ class PilotWindow(QMainWindow):
         self.start_button.setEnabled(idle);self.reset_button.setEnabled(active);self.stop_button.setEnabled(active)
         self.world.setEnabled(idle);self.odometry.setEnabled(idle)
         self.arm_button.setEnabled(False);self.disarm_button.setEnabled(False);self.mode.setEnabled(False)
+        self.task_button.setEnabled(False);self.abort_button.setEnabled(False)
         self.phase_label.setText('●  SIMULATION '+phase.upper())
         color='#72d6b3' if active else ('#f1a5a5' if phase=='Error' else GOLD)
         self.phase_label.setStyleSheet(f'color:{color};font-weight:600;')
@@ -282,9 +302,38 @@ class PilotWindow(QMainWindow):
         self.ros.set_view(name)
         self.canvas.set_frame(None)
         self.canvas.title='ZED left eye' if name=='First person' else 'Rear-following camera'
-        self.view_description.setText(self.canvas.title+' · bottom view always visible')
+        if not self.keyboard_button.isChecked():
+            self.view_description.setText(self.canvas.title+' · bottom view always visible')
 
     def cycle_view(self):self.switch_view('Third person' if self.view_buttons['First person'].isChecked() else 'First person')
+
+    def toggle_keyboard(self,enabled):
+        self.keys.clear()
+        self.ros.set_keyboard(NEUTRAL if enabled else None)
+        self.view_description.setText(KEY_HINT if enabled else self.canvas.title+' · bottom view always visible')
+        self.log('Keyboard piloting '+('on: '+KEY_HINT if enabled else 'off.'))
+
+    def keyboard_target(self):
+        axes=[0,0,0,0]
+        for key in self.keys:
+            if key in KEY_AXES:axis,direction=KEY_AXES[key];axes[axis]+=direction
+        power=1.0 if Qt.Key_Shift in self.keys else 0.5
+        x,y,z,r=(max(-1,min(1,value))*power for value in axes)
+        return (x*1000,y*1000,500+z*500,r*700)
+
+    def eventFilter(self,watched,event):
+        # Movement keys work whichever widget has focus while keyboard piloting is on.
+        kind=event.type()
+        if kind==QEvent.ApplicationDeactivate and self.keys:
+            self.keys.clear();self.ros.set_keyboard(NEUTRAL if self.keyboard_button.isChecked() else None)
+        if kind in (QEvent.KeyPress,QEvent.KeyRelease) and self.keyboard_button.isChecked() and self.isActiveWindow():
+            key=event.key()
+            if key in KEY_AXES or key==Qt.Key_Shift:
+                if not event.isAutoRepeat():
+                    (self.keys.add if kind==QEvent.KeyPress else self.keys.discard)(key)
+                    self.ros.set_keyboard(self.keyboard_target())
+                return True
+        return super().eventFilter(watched,event)
 
     def tick(self):
         frames,telemetry=self.ros.snapshot();now=time.monotonic()
@@ -296,6 +345,11 @@ class PilotWindow(QMainWindow):
         self.connection.setText(('Armed' if armed else 'Disarmed')+'  ·  '+telemetry.get('mode','—') if connected else 'Autopilot offline')
         self.connection.setStyleSheet('color:'+('#72d6b3' if connected else MUTED))
         self.arm_button.setEnabled(connected and not armed);self.disarm_button.setEnabled(connected and armed);self.mode.setEnabled(connected)
+        self.keyboard_button.setEnabled(connected)
+        if not connected and self.keyboard_button.isChecked():self.keyboard_button.setChecked(False)
+        task_active=telemetry.get('task_active',False)
+        self.task_button.setEnabled(armed and not task_active);self.abort_button.setEnabled(task_active)
+        self.task_status.setText(telemetry.get('task_status') or TASK_HINT)
         nav=now-telemetry.get('nav_time',0)<1.5 and self.phase=='Running'
         for name,key,pattern in [('Depth','depth','{:.2f}'),('Heading','heading','{:.0f}'),('Speed','speed','{:.2f}')]:
             self.metrics[name].setText(pattern.format(telemetry[key]) if nav and key in telemetry else '—')

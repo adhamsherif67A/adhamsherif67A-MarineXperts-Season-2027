@@ -237,6 +237,31 @@ The ocean course contains seabed terrain and underwater scenery. Choose the worl
 
 To install QGroundControl, follow its [official download/install instructions](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html). Install the Linux prerequisites listed there, download the AppImage, make it executable with `chmod +x /path/to/QGroundControl.AppImage`, then select it in Operation MX. It is optional for the app's own piloting controls.
 
+### Keyboard piloting (no gamepad)
+
+Click **Keyboard pilot** (next to Capture frame) after the vehicle connects, then arm. While it is on, the app window takes these keys:
+
+| Key | Movement |
+| --- | --- |
+| W / S | Forward / backward |
+| A / D | Sideways left / right |
+| Q / E or ← / → | Turn left / right |
+| ↑ / ↓ | Up / down |
+| Shift (hold) | Full power instead of half |
+
+Commands ramp up over about 0.4 s and return to neutral when the keys are released, the window loses focus, or keyboard piloting is switched off. A gamepad stick still has priority. Pressing a movement key during Task 1 stops the task. Keyboard commands use the same `/mako/autopilot/manual_control` path as the tasks, so the rebuilt `realjoy_node` is required.
+
+### Task 1 autopilot (transect)
+
+The pool transect is four parallel rails on the floor: red outer rails, blue inner rails, and a black bar between the blue rails at each end. **Task 1 · Transect** flies the blue corridor using only the bottom camera, keeping the red rails out of view, and stops above the far black bar.
+
+1. Start the simulation in **Team pool**, arm, and fly to the start of the transect: in front of or above the first black bar, facing along the rails, with the rails visible in the bottom camera.
+2. Click **Task 1 · Transect** (under the camera view). The app switches to **ALT_HOLD**, descends until the blue rails fill about half the image (roughly 0.45 m above them), centres and aligns, then moves forward.
+3. Watch the status next to the button and the log. The task stops by itself above the end marker, at the end of the rails, if the rails are lost, or after 150 s.
+4. **Abort task** or **Esc** stops it at any time. Moving any gamepad stick, or pressing a keyboard piloting key, takes control immediately and stops the task. Disarming also stops it.
+
+The app publishes its commands on `/mako/autopilot/manual_control`; `realjoy_node` forwards them to MAVROS while the sticks are centred. After updating this branch, rebuild Software2026 (step 4) and restart the simulation so the new `realjoy_node` runs. Detection and gain constants are at the top of `src/real_joy/src/mako_station/transect.py`.
+
 ### Gamepad defaults and tuning
 
 Mappings come from `joystick.cpp`; verify indices for your controller with `ros2 topic echo /joy` in ROS domain 42.
@@ -271,7 +296,8 @@ For ROS scripts, source the three setup files from step 5 first. Simulation insp
 | `src/real_joy/src/rov_gui_gst.py` | Current Operation MX entry point: `ros2 run real_joy rov_gui_gst.py`. |
 | `src/real_joy/src/mako_station/app.py` | Qt interface, controls, capture/recording and external tools; launched by the entry point. |
 | `src/real_joy/src/mako_station/simulation.py` | Sources workspaces, reads companion `commands.txt`, manages the five child process groups and reset/stop. Internal module. |
-| `src/real_joy/src/mako_station/ros_worker.py` | ROS telemetry/images and MAVROS service requests. Internal module. |
+| `src/real_joy/src/mako_station/ros_worker.py` | ROS telemetry/images, MAVROS service requests and autopilot task commands. Internal module. |
+| `src/real_joy/src/mako_station/transect.py` | Task 1 bottom-camera rail detection and controller (NumPy only). Internal module. |
 | `src/real_joy/src/joystick.cpp` | Compiled gamepad controller: `ros2 run real_joy realjoy_node`. The app starts it automatically. |
 | `src/real_joy/launch/real_joy.launch.py` | Default app launch; `hardware:=true` starts joy, RealJoy, the ZED bridge and legacy hardware UI instead. |
 | `src/real_joy/src/zed_to_mavros_pose.py` | Hardware ZED pose bridge: `ros2 run real_joy zed_to_mavros_pose.py`. Subscribes `/zed/zed_node/pose`; publishes MAVROS vision pose and odometry. Requires a separate ZED publisher and MAVROS. |
@@ -286,6 +312,7 @@ For ROS scripts, source the three setup files from step 5 first. Simulation insp
 | `test.py` | Experimental TCP image receiver on port 5001. Requires a sender using the framing protocol in the script. |
 | `task_1.py` (repository root) | Small Python exercise: `python3 task_1.py`, prints `72`. |
 | `src/real_joy/test/check_joystick.py` | Isolated controller integration check with synthetic joystick/state and fake MAVROS services, ROS domain 144. |
+| `src/real_joy/test/check_transect.py` | Task 1 check without ROS: renders the transect in a simulated bottom camera and flies it closed-loop. `python3` only needs NumPy. |
 
 Example experimental-script commands:
 
@@ -330,6 +357,7 @@ Controller check after sourcing ROS and both workspaces:
 
 ```bash
 python3 "$MAKO_SOFTWARE_WORKSPACE/src/real_joy/test/check_joystick.py"
+python3 "$MAKO_SOFTWARE_WORKSPACE/src/real_joy/test/check_transect.py"
 ```
 
 | Symptom | Check / fix |
@@ -344,6 +372,8 @@ python3 "$MAKO_SOFTWARE_WORKSPACE/src/real_joy/test/check_joystick.py"
 | No camera / camera offline | Check Gazebo GPU/EGL support, ROS bridges and camera topics; stale streams are marked offline. |
 | Visual odometry does not initialize | Check RTAB-Map package/logs; try Ground-truth pose to isolate camera odometry issues. |
 | Arm disabled / movement neutral | Wait for recent MAVROS connected state; check `/joy`, mappings, controller log and rejected services. |
+| Task 1: "Autopilot commands are not reaching the vehicle" | Rebuild Software2026 so `realjoy_node` forwards `/mako/autopilot/manual_control`, then restart the simulation. |
+| Task 1: "blue rails not visible" | Move so the bottom camera shows the blue rails before starting; it searches forward for only 10 s. |
 | Record session fails | Install ffmpeg and use an X11 session with `DISPLAY` set. |
 | Legacy UDP video fails | Check sender, UDP port 5000, GStreamer plugins and OpenCV GStreamer support. |
 
