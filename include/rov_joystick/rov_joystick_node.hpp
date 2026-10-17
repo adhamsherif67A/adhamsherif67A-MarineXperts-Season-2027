@@ -3,7 +3,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/joy.hpp>
-#include <geometry_msgs/msg/twist.hpp>
+#include <mavros_msgs/msg/manual_control.hpp>
 #include <mavros_msgs/srv/command_bool.hpp>
 #include <mavros_msgs/srv/set_mode.hpp>
 
@@ -17,7 +17,7 @@ private:
     void send_mode_command(const std::string& target_mode);
 
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr sub_joy_;
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr pub_vel_;
+    rclcpp::Publisher<mavros_msgs::msg::ManualControl>::SharedPtr pub_vel_;
     rclcpp::Client<mavros_msgs::srv::CommandBool>::SharedPtr client_arm_;
     rclcpp::Client<mavros_msgs::srv::SetMode>::SharedPtr client_mode_;
 

@@ -4,8 +4,8 @@ RovJoystickNode::RovJoystickNode() : Node("rov_joystick_node"), vehicle_armed_(f
     sub_joy_ = this->create_subscription<sensor_msgs::msg::Joy>(
         "/joy", 10, std::bind(&RovJoystickNode::joy_callback, this, std::placeholders::_1));
         
-    pub_vel_ = this->create_publisher<geometry_msgs::msg::Twist>(
-        "/mavros/setpoint_velocity/cmd_vel_unstamped", 10);
+  pub_vel_ = this->create_publisher<mavros_msgs::msg::ManualControl>(
+    "/mavros/manual_control/send", 10);
         
     client_arm_ = this->create_client<mavros_msgs::srv::CommandBool>("/mavros/cmd/arming");
     client_mode_ = this->create_client<mavros_msgs::srv::SetMode>("/mavros/set_mode");
@@ -14,12 +14,20 @@ RovJoystickNode::RovJoystickNode() : Node("rov_joystick_node"), vehicle_armed_(f
 }
 
 void RovJoystickNode::joy_callback(const sensor_msgs::msg::Joy::SharedPtr msg) {
-    geometry_msgs::msg::Twist vel_cmd;
-    vel_cmd.linear.x = msg->axes[AXIS_SURGE];
-    vel_cmd.linear.y = msg->axes[AXIS_SWAY];
-    vel_cmd.linear.z = msg->axes[AXIS_HEAVE];
-    vel_cmd.angular.z = msg->axes[AXIS_YAW];
-    pub_vel_->publish(vel_cmd);
+	mavros_msgs::msg::ManualControl mc_msg;
+	mc_msg.header.stamp = this->get_clock()->now();
+
+// Invert X to fix backward movement, scale Y and R normally
+	mc_msg.x = msg->axes[AXIS_SURGE] * -1000.0; 
+	mc_msg.y = msg->axes[AXIS_SWAY] * 1000.0;
+	mc_msg.r = msg->axes[AXIS_YAW] * 1000.0;
+
+// Shift Z axis from [-1.0, 1.0] to the [0, 1000] scale ArduSub requires
+	mc_msg.z = (msg->axes[AXIS_HEAVE] + 1.0) * 500.0; 
+	
+	mc_msg.buttons = 0; 
+
+	pub_vel_->publish(mc_msg);
 
     if (msg->buttons[BTN_ARM] == 1 && !vehicle_armed_) {
         send_arming_command(true);
