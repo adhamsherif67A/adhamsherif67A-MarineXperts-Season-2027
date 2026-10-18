@@ -1,0 +1,18 @@
+# Allow only portable source and container tooling into the build context.
+**
+!Dockerfile
+!entrypoint.sh
+!install_geographiclib_datasets.sh
+!commands.txt
+!docker/
+!docker/**
+!src/
+!src/robot_description/
+!src/robot_description/**
+**/__pycache__
+**/*.pyc
+**/build
+**/install
+**/log
+**/logs
+**/export.log

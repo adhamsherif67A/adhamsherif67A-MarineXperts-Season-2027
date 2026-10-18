@@ -1,0 +1,8 @@
+Installation Prerequisites:
+
+1- Ardupilot Sitl: https://ardupilot.org/dev/docs/building-setup-linux.html#building-setup-linux
+2- Ardupilot Gaebo : https://github.com/ArduPilot/ardupilot_gazebo (Remember we are using Gazebo11)
+3- Download Ardupilot gazebo plugin (libArduPilotPlugin.so) ####For GAZEBO 11
+4- INSTALL MAVROS FOR ROS2 HUMBLE
+5-Run this command  ros2 launch robot_description mako_launch.launch.py   world:=/home/boda/mako_ws/src/robot_description/world/pool.sdf   mavros_fcu_url:=tcp://127.0.0.1:5760   sitl_out_addr:=127.0.0.1 sitl_out_port:=14551
+6-Run ros2 run joy game_controller_node for Joystick control "Arming/Disarming" with Option button
